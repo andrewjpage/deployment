@@ -1,0 +1,117 @@
+Format: 1.52
+
+
+Title: Pathogen Informatics
+SubTitle: Documentation of Internal Software
+
+Footer: Copyright (C) 2011 Genome Research Limited. All Rights Reserved.
+Timestamp: Generated on month day, year
+#   m     - One or two digit month.  January is "1"
+#   mm    - Always two digit month.  January is "01"
+#   mon   - Short month word.  January is "Jan"
+#   month - Long month word.  January is "January"
+#   d     - One or two digit day.  1 is "1"
+#   dd    - Always two digit day.  1 is "01"
+#   day   - Day with letter extension.  1 is "1st"
+#   yy    - Two digit year.  2006 is "06"
+#   yyyy  - Four digit year.  2006 is "2006"
+#   year  - Four digit year.  2006 is "2006"
+
+
+# --------------------------------------------------------------------------
+# 
+# Cut and paste the lines below to change the order in which your files
+# appear on the menu.  Don't worry about adding or removing files, Natural
+# Docs will take care of that.
+# 
+# You can further organize the menu by grouping the entries.  Add a
+# "Group: [name] {" line to start a group, and add a "}" to end it.
+# 
+# You can add text and web links to the menu by adding "Text: [text]" and
+# "Link: [name] ([URL])" lines, respectively.
+# 
+# The formatting and comments are auto-generated, so don't worry about
+# neatness when editing the file.  Natural Docs will clean it up the next
+# time it is run.  When working with groups, just deal with the braces and
+# forget about the indentation and comments.
+# 
+# --------------------------------------------------------------------------
+
+
+File: Overview  (Overview.txt)
+
+Group: Perl  {
+
+   Group: Cgi  {
+
+      File: qc_grind.pl  (perl/cgi/qc_grind.pl)
+      File: QCGrindWeb  (perl/cgi/QCGrindWeb.pm)
+      File: report.pl  (perl/cgi/report.pl)
+      }  # Group: Cgi
+
+   Group: Modules  {
+
+      File: GoogleDocument  (perl/modules/GoogleDocument.pm)
+      File: GoogleDocumentHelper  (perl/modules/GoogleDocumentHelper.pm)
+      File: Template  (perl/modules/Template.pm)
+      }  # Group: Modules
+
+   Group: Scripts  {
+
+      File: backup_documents.pl  (perl/scripts/backup_documents.pl)
+      File: check_aux_files.pl  (perl/scripts/check_aux_files.pl)
+      File: contigs2fas.pl  (perl/scripts/contigs2fas.pl)
+      File: fetch_references.pl  (perl/scripts/fetch_references.pl)
+      File: generate_config_files.pl  (perl/scripts/generate_config_files.pl)
+      File: list_used_references.pl  (perl/scripts/list_used_references.pl)
+      File: pathfind  (perl/scripts/pathfind)
+      File: plexfind  (perl/scripts/plexfind)
+      File: populate_assembly_sizes.pl  (perl/scripts/populate_assembly_sizes.pl)
+      File: populate_organisms.pl  (perl/scripts/populate_organisms.pl)
+      File: reads_analysis.pl  (perl/scripts/reads_analysis.pl)
+      File: rt_report  (perl/scripts/rt_report)
+      File: scaffolder  (perl/scripts/scaffolder)
+      File: set_orgprops.pl  (perl/scripts/set_orgprops.pl)
+      File: template.pl  (perl/scripts/template.pl)
+      File: update_fasta_file_names.pl  (perl/scripts/update_fasta_file_names.pl)
+      File: update_lustre_ref_genomes.pl  (perl/scripts/update_lustre_ref_genomes.pl)
+      File: update_pathtrack.pl  (perl/scripts/update_pathtrack.pl)
+      File: update_pathtrack_irods.pl  (perl/scripts/update_pathtrack_irods.pl)
+      }  # Group: Scripts
+
+   }  # Group: Perl
+
+Group: Python  {
+
+   Group: Scripts  {
+
+      File: template.py  (python/scripts/template.py)
+      }  # Group: Scripts
+
+   Group: Modules  {
+
+      File: template.py  (python/modules/template.py)
+      }  # Group: Modules
+
+   }  # Group: Python
+
+Group: Shell  {
+
+   Group: Scripts  {
+
+      File: build.sh  (build.sh)
+      File: shell/scripts/template.sh  (shell/scripts/template.sh)
+      }  # Group: Scripts
+
+   }  # Group: Shell
+
+Group: Index  {
+
+   Index: Everything
+   Class Index: Classes
+   File Index: Files
+   Function Index: Functions
+   Variable Index: Variables
+   Constant Index: Constants
+   }  # Group: Index
+

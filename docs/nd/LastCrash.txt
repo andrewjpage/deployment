@@ -1,0 +1,25 @@
+Crash Message:
+
+   Couldn't open input file /nfs/users/nfs_a/ap12/pathsoft/trunk/.#Overview.txt
+
+Current Action:
+
+   Parsing /nfs/users/nfs_a/ap12/pathsoft/trunk/.#Overview.txt
+
+Natural Docs version 1.52
+Perl version 5.8.8 on linux
+
+Command Line:
+
+   -i pathsoft/trunk/ -o HTML pathsoft/docs/ -p pathsoft/trunk/docs/nd/
+
+Stack Trace:
+
+   NaturalDocs::Error::CatchDeath, called from
+   (eval), line 53 of /software/perl-5.8.8/lib/5.8.8/x86_64-linux-thread-multi/Encode.pm, called from
+   (eval), line 53 of /software/perl-5.8.8/lib/5.8.8/x86_64-linux-thread-multi/Encode.pm, called from
+   main::BEGIN, line 25 of /nfs/users/nfs_a/ap12/tmp/NaturalDocs/Modules/NaturalDocs/LineReader.pm, called from
+   (eval), line 0 of Encode/ConfigLocal.pm, called from
+   (eval), line 0 of Encode/ConfigLocal.pm, called from
+   main::BEGIN, line 66 of tmp/NaturalDocs/NaturalDocs, called from
+   (eval), line 0 of Encode/ConfigLocal.pm
