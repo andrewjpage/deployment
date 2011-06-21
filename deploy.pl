@@ -26,21 +26,21 @@ package Deploy;
 BEGIN { unshift(@INC, './modules') }
 use strict;
 use warnings;
-use TimeStamp;
 use GlobalConfigSettings;
 use InstallMappings;
 use SvnRepository;
 
 # initialise settings
-my $time = TimeStamp->new();
-my $global_config_settings = GlobalConfigSettings->new(formatted_time_stamp => $time->{formatted_time_stamp});
-my %config_settings = %{$global_config_settings->get_config_settings()};
-my $install_mappings = InstallMappings->new(production_directories => $config_settings{production_directories});
-my %repo_file_to_server_directory = %{$install_mappings->get_install_mappings()};
+my %config_settings = %{GlobalConfigSettings->new()->get_config_settings()};
+my %repo_file_to_server_directory = %{InstallMappings->new(
+    production_directories => $config_settings{production_directories}
+  )->get_install_mappings()};
 
 # checkout local copy of code
-my $svn_repository = SvnRepository->new(application => $config_settings{application_locations}{svn}, url => $config_settings{general}{repository}{url}, checkout_directory => $config_settings{checkout_directory});
-$svn_repository->checkout;
+SvnRepository->new(
+  application        => $config_settings{application_locations}{svn}, 
+  url                => $config_settings{general}{repository}{url}, 
+  checkout_directory => $config_settings{checkout_directory})->checkout;
 
 
 foreach my $directory (@{$config_settings{general}{directories_to_build}}) {

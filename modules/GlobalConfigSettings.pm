@@ -5,7 +5,7 @@ GlobalConfigSettings.pm   - Return configuration settings
 =head1 SYNOPSIS
 
 use GlobalConfigSettings;
-my $global_config_settings = GlobalConfigSettings->new(formatted_time_stamp => '20101103');
+my $global_config_settings = GlobalConfigSettings->new();
 my %config_settings = %{$global_config_settings->get_config_settings()};
 
 =cut
@@ -14,6 +14,7 @@ package GlobalConfigSettings;
 
 use strict;
 use warnings;
+use TimeStamp;
 
 sub new
 {
@@ -27,6 +28,7 @@ sub new
 sub get_config_settings
 {
   my( $self ) = @_;
+  my $time = TimeStamp->new();
   
   my %config_settings =
     (
@@ -38,7 +40,7 @@ sub get_config_settings
         },
         directories_to_build => ['perl','java']
       },
-      checkout_directory => "/tmp/$self->{formatted_time_stamp}",
+      checkout_directory => "/tmp/$time->{formatted_time_stamp}",
       production_directories => {
         production_bin    => '/software/pathogen/internal/prod/bin',
         production_lib    => '/software/pathogen/internal/prod/lib',
