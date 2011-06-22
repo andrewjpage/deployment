@@ -1,0 +1,4 @@
+general:
+  perl: [ ['cgi/map_request.pl',        "production_bin"],
+          ['modules/GoogleDocument.pm', "production_lib"] ]
+  java: [ ["googlecode.jar", "production_java"] ]

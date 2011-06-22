@@ -10,7 +10,7 @@ $time->{formatted_time_stamp};
 
 =cut
 
-package TimeStamp;
+package Deploy::TimeStamp;
 
 use strict;
 use warnings;

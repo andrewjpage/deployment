@@ -1,0 +1,4 @@
+general:
+  perl: [ ['script/myperl_file',  "test_bin"],
+          ['modules/mymodule.pm', "test_lib"] ]
+  java: [ ["code.jar", "test_java"] ]

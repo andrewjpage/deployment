@@ -1,0 +1,25 @@
+general:
+  repository:
+    url: 'svn+ssh://svn.internal.sanger.ac.uk/repos/svn/pathsoft/general/trunk'
+    branch: 'trunk'
+  directories_to_build: ['perl','java','python']
+
+checkout_directory: "/tmp"
+
+directories:
+  production_bin:    '/software/pathogen/internal/prod/bin'
+  production_lib:    '/software/pathogen/internal/prod/lib'
+  preproduction_bin: '/software/pathogen/internal/preprod/bin'
+  preproduction_lib: '/software/pathogen/internal/preprod/lib'
+  production_java:   '/software/pathogen/internal/pathdev/java'
+  documentation:     '/nfs/WWWdev/INTWEB_docs/htdocs/Teams/Team81/docs'
+
+application_locations:
+  perl:           '/usr/bin/perl'
+  natural_docs:   '/usr/bin/NaturalDocs'
+  source_control: '/usr/bin/svn'
+  make:           '/usr/bin/make'
+  scp:            '/usr/bin/scp'
+deployment:
+  server: 'lenny-dev64'
+  user:   'pathinfo'

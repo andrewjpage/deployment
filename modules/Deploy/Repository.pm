@@ -1,11 +1,11 @@
 =head1 NAME
 
-SvnRepository.pm   - Checkout an SVN repository
+Repository.pm   - Checkout a repository
 
 =head1 SYNOPSIS
 
-use SvnRepository;
-my $svn_repository = SvnRepository->new(
+use Repository;
+my $repository = Repository->new(
     application => '/usr/bin/svn', 
     url => 'svn+ssh://svn.internal.sanger.ac.uk/repos/svn/pathsoft/general/trunk', 
     checkout_directory => "/tmp/123");
@@ -13,7 +13,7 @@ $svn_repository->checkout;
 
 =cut
 
-package SvnRepository;
+package Deploy::Repository;
 
 use strict;
 use warnings;
@@ -27,10 +27,18 @@ sub new
     return $self;
 }
 
+sub clone
+{
+  my( $self ) = @_;
+  system("$self->{application} clone $self->{url} $self->{checkout_directory}") == 0 or die "Failed to clone";
+}
+
 sub checkout
 {
   my( $self ) = @_;
-  system("$self->{application} checkout $self->{url} $self->{checkout_directory}") == 0 or die "Failed to checkout";
-} 
+  system("cd $self->{checkout_directory} && $self->{application} checkout $self->{branch}") == 0 or die "Failed to checkout";
+}
+
+
 
 1;
