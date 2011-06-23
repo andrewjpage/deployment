@@ -7,12 +7,10 @@ general:
 checkout_directory: "/tmp"
 
 directories:
-  test_bin:          '/tmp/test/bin'
-  test_lib:          '/tmp/test/lib'
-  test2_bin:         '/tmp/test2/bin'
-  test2_lib:         '/tmp/test2/lib'
-  test_java:         '/tmp/test/java'
-  documentation:     '/tmp/docs'
+  test_bin:          '/tmp'
+  test_lib:          '/tmp'
+  test_java:         '/tmp'
+  documentation:     '/tmp'
 
 application_locations:
   perl:           '/usr/bin/perl'
@@ -21,5 +19,5 @@ application_locations:
   make:           '/usr/bin/make'
   
 deployment:
-  server: 'seq1'
+  server: 'seq1b'
   user:   ''
