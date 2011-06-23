@@ -19,8 +19,7 @@ application_locations:
   natural_docs:   '/usr/bin/NaturalDocs'
   source_control: '/usr/local/bin/git'
   make:           '/usr/bin/make'
-  scp:            '/usr/bin/scp'
   
 deployment:
-  server: 'localhost'
+  server: 'seq1'
   user:   ''

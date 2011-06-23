@@ -19,7 +19,6 @@ application_locations:
   natural_docs:   '/usr/bin/NaturalDocs'
   source_control: '/usr/bin/svn'
   make:           '/usr/bin/make'
-  scp:            '/usr/bin/scp'
 deployment:
   server: 'lenny-dev64'
   user:   'pathinfo'

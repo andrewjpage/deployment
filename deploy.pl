@@ -27,12 +27,12 @@ BEGIN { unshift(@INC, './modules') }
 use strict;
 use warnings;
 use Getopt::Long;
+use Net::SCP;
 use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
 use Deploy::Repository;
 use Deploy::Make;
 use Deploy::Documentation;
-use Deploy::CopyFiles;
 
 my $ENVIRONMENT;
 
@@ -65,6 +65,13 @@ my $repository = Deploy::Repository->new(
 $repository->clone();
 $repository->checkout();
 
+#Git::Repository->run( clone => $config_settings{general}{repository}{url} => $config_settings{checkout_directory} );
+#my $repository = Git::Repository->new( $config_settings{checkout_directory} );
+#$repository->run( checkout => $config_settings{general}{repository}{branch} );
+#$repository->run( tag => $ENVIRONMENT."_".$config_settings{formatted_time_stamp} );
+#$repository->run( push => origin => '--tags' );
+
+
 # build and test 
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   my $make = Deploy::Make->new(
@@ -86,15 +93,14 @@ my $documenation = Deploy::Documentation->new(
 $documenation->create_and_install(); 
 
 # install code by copying to remote server
-my $copy_files = Deploy::CopyFiles->new(
-    application => $config_settings{application_locations}{scp},
-    user        => $config_settings{deployment}{user},
-    server      => $config_settings{deployment}{server}
-  );
-foreach my $directory (@{$config_settings{general}{directories_to_build}}) {
+my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 1 } ); 
+for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
-    $copy_files->copy($config_settings{checkout_directory}/$directory/$mappings->[0], $mappings->[1]);
+    $scp_connection->cwd($mappings->[1]);
+    $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr};
   }
 }
+
+# cleanup working directories
 

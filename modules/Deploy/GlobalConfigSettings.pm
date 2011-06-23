@@ -35,6 +35,7 @@ sub get_config_settings
 
   my $time = Deploy::TimeStamp->new();
   $config_settings{checkout_directory} = $config_settings{checkout_directory}."/".$time->{formatted_time_stamp};
+  $config_settings{formatted_time_stamp} = $time->{formatted_time_stamp};
 
   return \%config_settings;
 } 

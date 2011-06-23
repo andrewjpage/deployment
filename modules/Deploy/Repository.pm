@@ -11,6 +11,8 @@ my $repository = Repository->new(
     checkout_directory => "/tmp/123");
 $svn_repository->checkout;
 
+Replace with Git::Repository
+
 =cut
 
 package Deploy::Repository;
@@ -38,7 +40,5 @@ sub checkout
   my( $self ) = @_;
   system("cd $self->{checkout_directory} && $self->{application} checkout $self->{branch}") == 0 or die "Failed to checkout";
 }
-
-
 
 1;
