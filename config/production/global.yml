@@ -9,6 +9,7 @@ checkout_directory: "/tmp"
 directories:
   production_bin:    '/software/pathogen/internal/prod/bin'
   production_lib:    '/software/pathogen/internal/prod/lib'
+  production_cgi:    ''
   preproduction_bin: '/software/pathogen/internal/preprod/bin'
   preproduction_lib: '/software/pathogen/internal/preprod/lib'
   production_java:   '/software/pathogen/internal/pathdev/java'
