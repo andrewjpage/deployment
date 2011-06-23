@@ -28,6 +28,7 @@ use strict;
 use warnings;
 use Getopt::Long;
 use Net::SCP;
+use Git::Repository;
 use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
 use Deploy::Repository;
@@ -56,20 +57,12 @@ my %repo_file_to_server_directory = %{Deploy::InstallMappings->new(
     directories => $config_settings{directories}
   )->get_install_mappings()};
 
-# checkout local copy of code
-my $repository = Deploy::Repository->new(
-  application        => $config_settings{application_locations}{source_control}, 
-  url                => $config_settings{general}{repository}{url},
-  branch             => $config_settings{general}{repository}{branch},
-  checkout_directory => $config_settings{checkout_directory});
-$repository->clone();
-$repository->checkout();
-
-#Git::Repository->run( clone => $config_settings{general}{repository}{url} => $config_settings{checkout_directory} );
-#my $repository = Git::Repository->new( $config_settings{checkout_directory} );
-#$repository->run( checkout => $config_settings{general}{repository}{branch} );
-#$repository->run( tag => $ENVIRONMENT."_".$config_settings{formatted_time_stamp} );
-#$repository->run( push => origin => '--tags' );
+# checkout a local copy and tag last commit with timestamp
+Git::Repository->run( clone => $config_settings{general}{repository}{url}, $config_settings{checkout_directory} );
+my $repository = Git::Repository->new( work_tree => $config_settings{checkout_directory} );
+$repository->run( checkout => $config_settings{general}{repository}{branch} );
+$repository->run( tag => $ENVIRONMENT."_".$config_settings{formatted_time_stamp} );
+$repository->run( push => origin => '--tags' );
 
 
 # build and test 

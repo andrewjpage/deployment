@@ -29,3 +29,4 @@ Dependancies:
   * NaturalDocs
   * Getopt::Long 
   * Net::SCP
+  * Git::Repository

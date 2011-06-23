@@ -1,7 +1,7 @@
 general:
   repository:
     url: 'git+ssh://git.internal.sanger.ac.uk/repos/git/pathogens/general.git'
-    branch: 'makefiles_for_deployment'
+    branch: 'master'
   directories_to_build: ['perl','java','python']
     
 checkout_directory: "/tmp"
