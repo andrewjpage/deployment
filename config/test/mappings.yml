@@ -10,7 +10,7 @@ general:
             ['scripts/features_with_term_property.py',  'production_bin'],
             ['scripts/get_orthologues_filtered.py',     'production_bin'],
             ['scripts/get_synonyms.py',                 'production_bin'],
-            ['scripts/gffimini.py',                     'production_bin'],
+            ['scripts/gffmini.py',                      'production_bin'],
             ['scripts/run_with_json.py',                'production_bin'],
             ['scripts/wiki_extract.py',                 'production_bin'],
             ['scripts/wiki_load_homepages.py',          'production_bin'],
