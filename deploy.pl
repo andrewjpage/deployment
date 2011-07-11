@@ -31,7 +31,6 @@ use Net::SCP;
 use Git::Repository;
 use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
-use Deploy::Repository;
 use Deploy::Make;
 use Deploy::Documentation;
 

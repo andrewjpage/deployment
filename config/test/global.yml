@@ -2,20 +2,24 @@ general:
   repository:
     url: 'git+ssh://git.internal.sanger.ac.uk/repos/git/pathogens/general.git'
     branch: 'master'
-  directories_to_build: ['perl','java','python']
-    
+  directories_to_build: ['perl','java','python','shell']
+
 checkout_directory: "/tmp"
 
 directories:
-  test_bin:          '/tmp'
-  test_lib:          '/tmp'
-  test_java:         '/tmp'
+  production_bin:    '/tmp'
+  production_lib:    '/tmp'
+  pathdev_lib:       '/tmp'
+  pathdev_bin:       '/tmp'
+  preproduction_bin: '/tmp'
+  preproduction_lib: '/tmp'
+  production_java:   '/tmp'
   documentation:     '/tmp'
 
 application_locations:
-  perl:           '/usr/bin/perl'
-  natural_docs:   '/usr/bin/NaturalDocs'
-  source_control: '/usr/local/bin/git'
+  perl:           '/software/bin/perl'
+  natural_docs:   '/software/pathogen/external/apps/usr/local/NaturalDocs-1.52/NaturalDocs'
+  source_control: '/usr/bin/git'
   make:           '/usr/bin/make'
   
 deployment:
