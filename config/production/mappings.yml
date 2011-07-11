@@ -67,6 +67,7 @@ general:
             ['scripts/wtsi_chado_privs.ksh',               'pathdev_bin'   ],
             ['scripts/load_organisms.sh',                  'pathdev_bin'   ],
             ['scripts/setup_pathpipe_environment.sh',      'pathdev_bin'   ],
+            ['scripts/setup_test_pathpipe_environment.sh', 'pathdev_bin'   ],
             ['scripts/tmhmm_chado',                        'production_bin'],
             ['scripts/writedb_entry',                      'production_bin'],
             ['scripts/chado_dump_transcripts',             'production_bin'],
