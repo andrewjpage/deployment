@@ -89,6 +89,9 @@ my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{serve
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
+    # set files to be group writeable and executable
+    chmod(0775, "$config_settings{checkout_directory}/$directory/$mappings->[0]");
+    
     $scp_connection->cwd($mappings->[1]);
     $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr};
   }
