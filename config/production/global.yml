@@ -23,4 +23,3 @@ application_locations:
   make:           '/usr/bin/make'
 deployment:
   server: 'lenny-dev64'
-  user:   'pathdb'
