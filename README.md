@@ -9,7 +9,8 @@ This application does:
 4. Build and install the documentation
 5. Install the files
 
-Its must be run from a machine with /software mounted on it so that java libraries are accessible.
+Its must be run from a machine with /software mounted on it so that java libraries are accessible, and to avoid permissions issues it needs to be run by pathdb.
+    ssh pathdb@pathinfo-test
 
 Usage
 -----
@@ -30,3 +31,4 @@ Dependancies:
   * Getopt::Long 
   * Net::SCP
   * Git::Repository
+

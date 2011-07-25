@@ -23,5 +23,5 @@ application_locations:
   make:           '/usr/bin/make'
   
 deployment:
-  server: 'seq1b'
-  user:   ''
+  server: 'pathinfo-test'
+  user: 'pathdb'

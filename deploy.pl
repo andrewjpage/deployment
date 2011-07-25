@@ -75,24 +75,26 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 }
 
 # create and install documenation
-my $documenation = Deploy::Documentation->new(
+my $documentation = Deploy::Documentation->new(
     perl                                  => $config_settings{application_locations}{perl},
     natural_docs                          => $config_settings{application_locations}{natural_docs},
     checkout_directory                    => $config_settings{checkout_directory},
     output_directory                      => $config_settings{directories}{documentation},
     documentation_configuration_directory => $config_settings{checkout_directory}."/docs/nd/"
   );
-$documenation->create_and_install(); 
+#$documentation->create_and_install(); 
 
 # install code by copying to remote server
 my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 0 } ); 
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
+    # set files to be group writeable and executable
+    chmod(0775, "$config_settings{checkout_directory}/$directory/$mappings->[0]");
+    
     $scp_connection->cwd($mappings->[1]);
-    $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr};
+    $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
   }
 }
 
 # cleanup working directories
-
