@@ -75,17 +75,17 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 }
 
 # create and install documenation
-my $documenation = Deploy::Documentation->new(
+my $documentation = Deploy::Documentation->new(
     perl                                  => $config_settings{application_locations}{perl},
     natural_docs                          => $config_settings{application_locations}{natural_docs},
     checkout_directory                    => $config_settings{checkout_directory},
     output_directory                      => $config_settings{directories}{documentation},
     documentation_configuration_directory => $config_settings{checkout_directory}."/docs/nd/"
   );
-#$documenation->create_and_install(); 
+#$documentation->create_and_install(); 
 
 # install code by copying to remote server
-my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => getlogin(), interactive => 0 } ); 
+my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 0 } ); 
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
@@ -98,4 +98,3 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 }
 
 # cleanup working directories
-
