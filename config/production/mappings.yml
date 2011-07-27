@@ -24,6 +24,7 @@ general:
             ['scripts/check_lustre.pl',               'pathdev_bin'   ],
             ['scripts/fetch_references.pl',           'pathdev_bin'   ],
             ['scripts/list_used_references.pl',       'pathdev_bin'   ],
+            ['scripts/list_acc_for_lanes.pl',         'pathdev_bin'   ],
             ['scripts/reads_analysis.pl',             'pathdev_bin'   ],
             ['scripts/scaffolder',                    'pathdev_bin'   ],
             ['scripts/set_orgprops.pl',               'pathdev_bin'   ],
