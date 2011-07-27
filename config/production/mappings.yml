@@ -80,5 +80,6 @@ general:
             ['scripts/pmid_extraction',                    'production_bin'],
             ['scripts/dnaplotter',                         'production_bin'],
             ['scripts/art',                                'production_bin'],
-            ['scripts/act',                                'production_bin']
+            ['scripts/act',                                'production_bin'],
+            ['scripts/disk_usage_report.sh',               'pathdev_bin'   ]
         ]
