@@ -31,6 +31,7 @@ general:
             ['scripts/check_aux_files.pl',            'pathdev_bin'   ],    
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
+            ['scripts/mapfind',                       'production_bin'],
             ['scripts/accessionfind',                 'production_bin'],
             ['scripts/bigger_blast.pl',               'production_bin'],
             ['scripts/flexi_blast.pl',                'production_bin'],
