@@ -30,6 +30,7 @@ general:
             ['scripts/update_pathtrack.pl',           'pathdev_bin'   ],       
             ['scripts/check_aux_files.pl',            'pathdev_bin'   ],  
             ['scripts/num_lanes_in_pipelines',        'pathdev_bin'   ],
+            ['scripts/forecast_sequencing_data.pl',   'pathdev_bin'   ],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
             ['scripts/mapfind',                       'production_bin'],
