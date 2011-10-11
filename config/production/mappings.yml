@@ -10,7 +10,8 @@ general:
             ['scripts/run_with_json.py',                'production_bin'],
             ['scripts/wiki_extract.py',                 'production_bin'],
             ['scripts/wiki_load_homepages.py',          'production_bin'],
-            ['scripts/writedb_entries.py',              'production_bin']
+            ['scripts/writedb_entries.py',              'production_bin'],
+            ['scripts/fastn2gc.py',                     'pathdev_bin'   ]
         ]
   
   perl: [
@@ -67,6 +68,8 @@ general:
             ['scripts/map2bam.pl',                    'production_bin']
         ]
   java: [ ["googlecode.jar", "production_java"] ]
+  
+  c: [[ "bin/stats", 'pathdev_bin']]
   
   shell: [
             ['scripts/update_tracking_databases.sh',       'pathdev_bin'   ],
