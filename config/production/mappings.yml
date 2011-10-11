@@ -11,7 +11,8 @@ general:
             ['scripts/wiki_extract.py',                 'production_bin'],
             ['scripts/wiki_load_homepages.py',          'production_bin'],
             ['scripts/writedb_entries.py',              'production_bin'],
-            ['scripts/fastn2gc.py',                     'pathdev_bin'   ]
+            ['scripts/fastn2gc.py',                     'pathdev_bin'   ],
+            ['scripts/mh12_utils.py',                   'pathdev_bin'   ]
         ]
   
   perl: [
