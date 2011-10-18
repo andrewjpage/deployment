@@ -34,6 +34,7 @@ general:
             ['scripts/num_lanes_in_pipelines',        'pathdev_bin'   ],
             ['scripts/forecast_sequencing_data.pl',   'pathdev_bin'   ],
             ['scripts/ena_submissions_update.pl',     'pathdev_bin'   ],
+            ['scripts/generate_project_pages.pl',     'pathdev_bin'   ],
             ['scripts/reffind',                       'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/plexfind',                      'production_bin'],

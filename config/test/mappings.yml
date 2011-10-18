@@ -35,6 +35,7 @@ general:
             ['scripts/update_pathtrack.pl',           'pathdev_bin'   ],       
             ['scripts/check_aux_files.pl',            'pathdev_bin'   ],    
             ['scripts/ena_submissions_update.pl',     'pathdev_bin'   ],
+            ['scripts/generate_project_pages.pl',     'pathdev_bin'   ],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
             ['scripts/bigger_blast.pl',               'production_bin'],
