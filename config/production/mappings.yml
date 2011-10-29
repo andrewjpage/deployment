@@ -69,6 +69,7 @@ general:
             ['modules/GoogleDocumentHelper.pm',       'production_lib'],
             ['scripts/contigs2fas.pl',                'production_bin'],
             ['scripts/validate_embl.pl',              'production_bin'],
+            ['scripts/shuffle_reads',                 'production_bin'],
             ['scripts/map2bam.pl',                    'production_bin']
         ]
   java: [ ["googlecode.jar", "production_java"] ]
