@@ -98,3 +98,5 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 }
 
 # cleanup working directories
+my $directory_to_delete = $config_settings{checkout_directory};
+`rm -rf $directory_to_delete`;
