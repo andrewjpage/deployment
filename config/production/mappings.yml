@@ -11,8 +11,10 @@ general:
             ['scripts/wiki_extract.py',                 'production_bin'],
             ['scripts/wiki_load_homepages.py',          'production_bin'],
             ['scripts/writedb_entries.py',              'production_bin'],
-            ['scripts/fastn2gc.py',                     'pathdev_bin'   ],
-            ['scripts/mh12_utils.py',                   'pathdev_bin'   ]
+            ['scripts/fastn2gc.py',                     'production_bin'],
+            ['scripts/mh12_utils.py',                   'production_bin'],
+	    ['scripts/fastn.py',    	                'production_bin'],
+	    ['scripts/fastn_split.py',              	'production_bin'],
         ]
   
   perl: [
@@ -74,7 +76,8 @@ general:
             ['scripts/validate_embl.pl',              'production_bin'],
             ['scripts/shuffle_reads',                 'production_bin'],
             ['scripts/assemble_lanes',                'production_bin'],
-            ['scripts/map2bam.pl',                    'production_bin']
+            ['scripts/map2bam.pl',                    'production_bin'],
+	    ['scripts/team133-bsub.pl',               'production_bin'],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
