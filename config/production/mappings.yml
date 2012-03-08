@@ -106,3 +106,6 @@ general:
             ['scripts/directory_size_report.sh',           'pathdev_bin'   ],
             ['scripts/generate_ref_index.sh',		   'pathdev_bin'   ]
         ]
+  splimer: [['splimer.pl',			'production_bin'],
+  	    ['modules/FastaLength.pm',		'production_lib'],
+	]
