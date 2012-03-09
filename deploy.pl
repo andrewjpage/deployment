@@ -61,9 +61,10 @@ Git::Repository->run( clone => $config_settings{general}{repository}{url}, $conf
 my $repository = Git::Repository->new( work_tree => $config_settings{checkout_directory} );
 $repository->run( checkout => $config_settings{general}{repository}{branch} );
 $repository->run( submodule => 'init');
-$repository->run( submodule => 'update');
 $repository->run( tag => $ENVIRONMENT."_".$config_settings{formatted_time_stamp} );
 $repository->run( push => origin => '--tags' );
+# fix me
+`cd $config_settings{checkout_directory} && git submodule update`;
 
 
 # build and test 
