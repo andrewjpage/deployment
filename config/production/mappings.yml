@@ -39,6 +39,7 @@ general:
             ['scripts/generate_project_pages.pl',     'pathdev_bin'   ],
             ['scripts/retry_failed_lanes.pl',         'pathdev_bin'   ],
             ['scripts/update_species_table.pl',       'pathdev_bin'   ],
+            ['scripts/scaffold_perl_application.pl',  'pathdev_bin'   ],
             ['scripts/reffind',                       'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
