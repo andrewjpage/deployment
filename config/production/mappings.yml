@@ -46,6 +46,7 @@ general:
             ['scripts/mapfind',                       'production_bin'],
             ['scripts/snpfind',                       'production_bin'],
             ['scripts/rnaseqfind',                    'production_bin'],
+            ['scripts/rnaexp2dnaplotter',             'production_bin'],
             ['scripts/accessionfind',                 'production_bin'],
             ['scripts/bigger_blast.pl',               'production_bin'],
             ['scripts/flexi_blast.pl',                'production_bin'],
