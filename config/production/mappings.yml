@@ -80,6 +80,7 @@ general:
             ['scripts/assemble_lanes',                'production_bin'],
             ['scripts/map2bam.pl',                    'production_bin'],
 	    ['scripts/team133-bsub.pl',               'production_bin'],
+            ['modules/Pathfind.pm',                   'production_lib'],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
