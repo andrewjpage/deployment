@@ -90,7 +90,7 @@ general:
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
-  c: [[ "bin/stats", 'pathdev_bin']]
+  c: [[ "bin/assembly_stats_mh12", 'pathdev_bin']]
   
   shell: [
             ['scripts/update_tracking_databases.sh',       'pathdev_bin'   ],
