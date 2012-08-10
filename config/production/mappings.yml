@@ -18,6 +18,7 @@ general:
         ]
   
   perl: [
+            ['scripts/tradis_gene_insert_sites',      'production_bin'],
             ['scripts/backup_documents.pl',           'pathdev_bin'   ], 
             ['scripts/generate_config_files.pl',      'pathdev_bin'   ], 
             ['scripts/populate_organisms.pl',         'pathdev_bin'   ],
