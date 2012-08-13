@@ -92,6 +92,7 @@ general:
   java: [ ["googlecode.jar", "production_java"] ]
   
   c: [[ "bin/assembly_stats_mh12", 'pathdev_bin']]
+  r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
   
   shell: [
             ['scripts/update_tracking_databases.sh',       'pathdev_bin'   ],
