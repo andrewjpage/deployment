@@ -88,5 +88,6 @@ general:
             ['scripts/pmid_extraction',                    'production_bin'],
             ['scripts/dnaplotter',                         'production_bin'],
             ['scripts/art',                                'production_bin'],
-            ['scripts/act',                                'production_bin']
+            ['scripts/act',                                'production_bin'],
+            ['scripts/orientationtracker.sh',              'production_bin']
         ]
