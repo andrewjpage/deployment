@@ -90,7 +90,8 @@ general:
             ['scripts/stats_and_graphs_for_bams',     'pathdev_bin'   ],
 	    ['scripts/sh16_scripts_to_git.pl',        'pathdev_bin'   ],
 	    ['scripts/jit_scripts_to_git.pl',         'pathdev_bin'   ],
-	    ['scripts/fasta_one_line.pl',             'production_bin']
+	    ['scripts/fasta_one_line.pl',             'production_bin'],
+            ['scripts/list_species_sequenced.pl',     'pathdev_bin'   ]
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
