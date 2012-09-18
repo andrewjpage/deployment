@@ -124,7 +124,8 @@ general:
             ['scripts/orientationtracker.sh',              'production_bin'],
             ['scripts/chado_dump_proteins_ordered',   	   'production_bin'],
             ['scripts/chado_dump_transcripts_coding',      'production_bin'],
-            ['scripts/chado_dump_transcripts_rna',         'production_bin']
+            ['scripts/chado_dump_transcripts_rna',         'production_bin'],
+	    ['scripts/run_jscript',         'production_bin']
         ]
   splimer: [['splimer.pl',			'production_bin'],
   	    ['modules/FastaLength.pm',		'production_lib'],
