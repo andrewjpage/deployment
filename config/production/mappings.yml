@@ -18,6 +18,7 @@ general:
         ]
   
   perl: [
+            ['scripts/convert_gff3_to_gff2.pl',       'production_bin'],
             ['scripts/tradis_merge_plots',            'production_bin'],
             ['scripts/validate_multi_fasta_alignment','production_bin'],
             ['scripts/tradis_gene_insert_sites',      'production_bin'],
