@@ -75,6 +75,7 @@ general:
             ['scripts/wtsi_chado_privs.ksh',               'pathdev_bin'   ],
             ['scripts/load_organisms.sh',                  'pathdev_bin'   ],
             ['scripts/setup_pathpipe_environment.sh',      'pathdev_bin'   ],
+            ['scripts/concatgff.sh',      		   'pathdev_bin'   ],
             ['scripts/tmhmm_chado',                        'production_bin'],
             ['scripts/writedb_entry',                      'production_bin'],
             ['scripts/chado_dump_transcripts',             'production_bin'],
@@ -87,5 +88,6 @@ general:
             ['scripts/pmid_extraction',                    'production_bin'],
             ['scripts/dnaplotter',                         'production_bin'],
             ['scripts/art',                                'production_bin'],
-            ['scripts/act',                                'production_bin']
+            ['scripts/act',                                'production_bin'],
+            ['scripts/orientationtracker.sh',              'production_bin']
         ]
