@@ -96,7 +96,8 @@ general:
 	    ['scripts/fasta_one_line.pl',             'production_bin'],
             ['scripts/list_species_sequenced.pl',     'pathdev_bin'   ],
 	    ['scripts/cshrc_to_bash.pl',              'pathdev_bin'   ],
-            ['scripts/infofind',                      'production_bin']
+            ['scripts/infofind',                      'production_bin'],
+            ['scripts/select_gene_sequences.pl',      'production_bin'],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
