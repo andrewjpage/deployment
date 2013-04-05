@@ -108,6 +108,8 @@ general:
   r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
   
   shell: [
+            ['scripts/genus_genbank_to_blast',             'pathdev_bin'   ],
+            ['scripts/refseq_blast_databases',             'pathdev_bin'   ],
             ['scripts/update_tracking_databases.sh',       'pathdev_bin'   ],
             ['scripts/wtsi_chado_privs.ksh',               'pathdev_bin'   ],
             ['scripts/load_organisms.sh',                  'pathdev_bin'   ],
