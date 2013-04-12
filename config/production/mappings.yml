@@ -90,6 +90,7 @@ general:
             ['scripts/map2bam.pl',                    'production_bin'],
 	    ['scripts/team133-bsub.pl',               'production_bin'],
             ['modules/Pathfind.pm',                   'production_lib'],
+            ['modules/PathfindLog.pm',                'production_lib'],
             ['modules/FindLanes.pm',                   'production_lib'],
             ['scripts/species_frequency',             'production_bin'],
             ['scripts/tradisfind',             	      'production_bin'],
