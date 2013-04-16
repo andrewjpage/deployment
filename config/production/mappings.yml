@@ -18,7 +18,6 @@ general:
         ]
   
   perl: [
-            ['scripts/gene_name_occurances',          'production_bin'],
             ['scripts/fastq_to_fasta',                'production_bin'],
             ['scripts/merge_rnaseq_expression_spreadsheets.pl', 'pathdev_bin'],
             ['scripts/convert_gff3_to_gff2.pl',       'production_bin'],
