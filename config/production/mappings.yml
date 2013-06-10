@@ -61,7 +61,6 @@ general:
             ['scripts/fasta_chunker.pl',              'production_bin'],
             ['scripts/blast_formatter.pl',            'production_bin'],
             ['scripts/rfam_scan.pl',                  'production_bin'],
-            ['scripts/abacas.pl',                     'production_bin'],
             ['scripts/big_blast.pl',                  'production_bin'],
             ['scripts/sequenceformat.converter.pl',   'production_bin'],
             ['scripts/embl_to_ps.pl',                 'production_bin'],
