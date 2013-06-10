@@ -2,7 +2,7 @@ general:
   repository:
     url: 'git+ssh://git.internal.sanger.ac.uk/repos/git/pathogens/general.git'
     branch: 'master'
-  directories_to_build: ['perl','java','python','shell','c','splimer','r']
+  directories_to_build: ['perl','python','shell','c','splimer','r']
 
 checkout_directory: "/tmp"
 
@@ -22,5 +22,5 @@ application_locations:
   source_control: '/usr/bin/git'
   make:           '/usr/bin/make'
 deployment:
-  server: 'lenny-dev64'
+  server: 'pathpipe-farm3'
   user: 'pathdb'
