@@ -136,6 +136,7 @@ general:
             ['scripts/chado_dump_proteins_ordered',   	   'production_bin'],
             ['scripts/chado_dump_transcripts_coding',      'production_bin'],
             ['scripts/chado_dump_transcripts_rna',         'production_bin'],
+	    ['scripts/db_info',         'production_bin'],
 	    ['scripts/run_jspecies',         'production_bin']
         ]
   splimer: [['splimer.pl',			'production_bin'],
