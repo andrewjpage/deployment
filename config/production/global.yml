@@ -1,7 +1,7 @@
 general:
   repository:
     url: 'git+ssh://git.internal.sanger.ac.uk/repos/git/pathogens/general.git'
-    branch: 'master'
+    branch: 'farm3'
   directories_to_build: ['perl','python','shell','c','splimer','r']
 
 checkout_directory: "/tmp"

@@ -25,7 +25,6 @@ general:
             ['scripts/validate_multi_fasta_alignment','production_bin'],
             ['scripts/tradis_gene_insert_sites',      'production_bin'],
             ['scripts/backup_documents.pl',           'pathdev_bin'   ], 
-            ['scripts/generate_config_files.pl',      'pathdev_bin'   ], 
             ['scripts/populate_organisms.pl',         'pathdev_bin'   ],
             ['scripts/rt_report',                     'pathdev_bin'   ],
             ['scripts/update_lustre_ref_genomes.pl',  'pathdev_bin'   ],
