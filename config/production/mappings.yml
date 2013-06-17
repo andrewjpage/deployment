@@ -34,7 +34,6 @@ general:
             ['scripts/fetch_references.pl',           'pathdev_bin'   ],
             ['scripts/list_used_references.pl',       'pathdev_bin'   ],
             ['scripts/reads_analysis.pl',             'pathdev_bin'   ],
-            ['scripts/scaffolder',                    'pathdev_bin'   ],
             ['scripts/set_orgprops.pl',               'pathdev_bin'   ],    
             ['scripts/check_aux_files.pl',            'pathdev_bin'   ],  
             ['scripts/num_lanes_in_pipelines',        'pathdev_bin'   ],
