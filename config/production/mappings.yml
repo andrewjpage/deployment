@@ -15,6 +15,7 @@ general:
             ['scripts/mh12_utils.py',                   'production_bin'],
             ['scripts/fastn.py',    	                  'production_bin'],
             ['scripts/fastn_split.py',                	'production_bin'],
+            ['scripts/get_sequencing_project_pages',    'production_bin'],
         ]
   
   perl: [
@@ -44,6 +45,7 @@ general:
             ['scripts/scaffold_perl_application.pl',  'pathdev_bin'   ],
             ['scripts/reffind',                       'production_bin'],
             ['scripts/whereismydata',                 'production_bin'],
+            ['scripts/submission_lookup',             'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/annotationfind',                'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
