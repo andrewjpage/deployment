@@ -15,7 +15,7 @@ general:
             ['scripts/mh12_utils.py',                   'production_bin'],
             ['scripts/fastn.py',    	                  'production_bin'],
             ['scripts/fastn_split.py',                	'production_bin'],
-            ['scripts/get_sequencing_project_pages',    'production_bin'],
+            ['scripts/get_sequencing_project_pages.py',    'production_bin'],
         ]
   
   perl: [
