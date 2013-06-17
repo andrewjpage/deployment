@@ -129,11 +129,16 @@ general:
             ['scripts/act',                                'production_bin'],
             ['scripts/disk_usage_report.sh',               'pathdev_bin'   ],
             ['scripts/directory_size_report.sh',           'pathdev_bin'   ],
+            ['scripts/backup_audit_schema.sh',             'pathdev_bin'   ],
             ['scripts/generate_ref_index.sh',              'pathdev_bin'   ],
             ['scripts/orientationtracker.sh',              'production_bin'],
             ['scripts/chado_dump_proteins_ordered',   	   'production_bin'],
             ['scripts/chado_dump_transcripts_coding',      'production_bin'],
             ['scripts/chado_dump_transcripts_rna',         'production_bin'],
+            ['scripts/download-ci-web.sh',                 'pathdev_bin'   ],
+            ['scripts/download-www1.sh',                   'pathdev_bin'   ],
+            ['scripts/download-www2.sh',                   'pathdev_bin'   ],
+            ['scripts/download.sh',                        'pathdev_bin'   ],
 	    ['scripts/db_info',         'production_bin'],
 	    ['scripts/run_jspecies',         'production_bin']
         ]
