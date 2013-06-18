@@ -111,7 +111,6 @@ general:
             ['scripts/refseq_blast_databases',             'pathdev_bin'   ],
             ['scripts/update_tracking_databases.sh',       'pathdev_bin'   ],
             ['scripts/wtsi_chado_privs.ksh',               'pathdev_bin'   ],
-            ['scripts/load_organisms.sh',                  'pathdev_bin'   ],
             ['scripts/setup_pathpipe_environment.sh',      'pathdev_bin'   ],
             ['scripts/setup_test_pathpipe_environment.sh', 'pathdev_bin'   ],
             ['scripts/concatgff.sh',                       'pathdev_bin'   ],
