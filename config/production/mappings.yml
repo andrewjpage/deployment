@@ -141,6 +141,10 @@ general:
             ['scripts/download-www1.sh',                   'pathdev_bin'   ],
             ['scripts/download-www2.sh',                   'pathdev_bin'   ],
             ['scripts/download.sh',                        'pathdev_bin'   ],
+            ['scripts/profile.pathogen',                   'production_etc'],
+            ['scripts/cshrc.pathogen',                     'production_etc'],
+            
+            
 	    ['scripts/db_info',         'production_bin'],
 	    ['scripts/run_jspecies',         'production_bin']
         ]
