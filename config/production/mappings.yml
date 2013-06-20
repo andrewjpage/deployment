@@ -143,8 +143,16 @@ general:
             ['scripts/download.sh',                        'pathdev_bin'   ],
             ['scripts/profile.pathogen',                   'production_etc'],
             ['scripts/cshrc.pathogen',                     'production_etc'],
-            
-            
+            ['scripts/elasticsearch-cluster-control',      'production_genedb'],
+            ['scripts/genedb-web-control',                 'production_genedb'],            
+            ['scripts/hazelcast-cluster-control',          'production_genedb'],     
+            ['scripts/omixed-web-control',                 'production_genedb'],            
+            ['scripts/push-staging-to-snapshot2',          'production_genedb'],     
+            ['scripts/copy_and_restart_genedb',            'production_genedb'],       
+            ['scripts/fix-nightly',                        'production_genedb'],                   
+            ['scripts/fix-snapshot',                       'production_genedb'],                  
+            ['scripts/fix-staging',                        'production_genedb'],
+
 	    ['scripts/db_info',         'production_bin'],
 	    ['scripts/run_jspecies',         'production_bin']
         ]
