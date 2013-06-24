@@ -105,7 +105,7 @@ general:
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
-  c: [[ "bin/assembly_stats", 'pathdev_bin']]
+  c: [[ "bin/assembly_stats", 'production_bin']]
   r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
   
   shell: [
