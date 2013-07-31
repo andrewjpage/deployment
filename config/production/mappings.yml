@@ -44,6 +44,7 @@ general:
             ['scripts/update_species_table.pl',       'pathdev_bin'   ],
             ['scripts/scaffold_perl_application.pl',  'pathdev_bin'   ],
             ['scripts/create_blast_dbs_from_annotation_pipeline',  'pathdev_bin'   ],
+            ['scripts/rebalance_disks',               'pathdev_bin'   ],
             ['scripts/reffind',                       'production_bin'],
             ['scripts/whereismydata',                 'production_bin'],
             ['scripts/submission_lookup',             'production_bin'],
