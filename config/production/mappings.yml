@@ -30,6 +30,7 @@ general:
             ['scripts/populate_organisms.pl',         'pathdev_bin'   ],
             ['scripts/rt_report',                     'pathdev_bin'   ],
             ['scripts/update_lustre_ref_genomes.pl',  'pathdev_bin'   ],
+            ['scripts/strip_sequence_from_gff_file.pl',  'pathdev_bin'   ],
             ['scripts/check_lustre.pl',               'pathdev_bin'   ],
             ['scripts/fetch_references.pl',           'pathdev_bin'   ],
             ['scripts/list_used_references.pl',       'pathdev_bin'   ],
