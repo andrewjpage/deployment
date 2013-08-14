@@ -19,6 +19,7 @@ general:
             ['modules/wikipy.py',                       'production_lib'],
 	    ['modules/util',				'production_lib'],
 	    ['modules/gffminimal',   	                'production_lib'],
+	    ['modules/ropy',				'production_lib'],
         ]
   
   perl: [
