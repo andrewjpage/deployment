@@ -16,7 +16,7 @@ general:
 	    ['scripts/fastn.py',    	                'production_bin'],
 	    ['scripts/fastn_split.py',              	'production_bin'],
         ]
-
+  
   perl: [
             ['scripts/fastq_to_fasta',                'production_bin'],
             ['scripts/merge_rnaseq_expression_spreadsheets.pl', 'pathdev_bin'],
@@ -24,8 +24,8 @@ general:
             ['scripts/tradis_merge_plots',            'production_bin'],
             ['scripts/validate_multi_fasta_alignment','production_bin'],
             ['scripts/tradis_gene_insert_sites',      'production_bin'],
-            ['scripts/backup_documents.pl',           'pathdev_bin'   ],
-            ['scripts/generate_config_files.pl',      'pathdev_bin'   ],
+            ['scripts/backup_documents.pl',           'pathdev_bin'   ], 
+            ['scripts/generate_config_files.pl',      'pathdev_bin'   ], 
             ['scripts/populate_organisms.pl',         'pathdev_bin'   ],
             ['scripts/rt_report',                     'pathdev_bin'   ],
             ['scripts/update_lustre_ref_genomes.pl',  'pathdev_bin'   ],
@@ -37,8 +37,8 @@ general:
             ['scripts/reads_analysis.pl',             'pathdev_bin'   ],
             ['scripts/scaffolder',                    'pathdev_bin'   ],
             ['scripts/set_orgprops.pl',               'pathdev_bin'   ],
-            ['scripts/update_pathtrack.pl',           'pathdev_bin'   ],
-            ['scripts/check_aux_files.pl',            'pathdev_bin'   ],
+            ['scripts/update_pathtrack.pl',           'pathdev_bin'   ],       
+            ['scripts/check_aux_files.pl',            'pathdev_bin'   ],  
             ['scripts/num_lanes_in_pipelines',        'pathdev_bin'   ],
             ['scripts/forecast_sequencing_data.pl',   'pathdev_bin'   ],
             ['scripts/ena_submissions_update.pl',     'pathdev_bin'   ],
@@ -47,7 +47,6 @@ general:
             ['scripts/update_species_table.pl',       'pathdev_bin'   ],
             ['scripts/scaffold_perl_application.pl',  'pathdev_bin'   ],
             ['scripts/reffind',                       'production_bin'],
-            ['scripts/pacbio_assemble_smrtanalysis-2.0.1',                       'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/annotationfind',                'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
@@ -81,7 +80,7 @@ general:
             ['scripts/blast2tab.pl',                  'production_bin'],
             ['scripts/sequence_search.pl',            'production_bin'],
             ['scripts/omcl2genedb.pl',                'production_bin'],
-            ['modules/GoogleDocument.pm',             'production_lib'],
+            ['modules/GoogleDocument.pm',             'production_lib'],  
             ['modules/GoogleDocumentHelper.pm',       'production_lib'],
             ['scripts/contigs2fas.pl',                'production_bin'],
             ['scripts/validate_embl.pl',              'production_bin'],
@@ -105,10 +104,10 @@ general:
             ['scripts/find_untracked_studies.pl',     'pathdev_bin'   ],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
-
+  
   c: [[ "bin/assembly_stats", 'production_bin']]
   r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
-
+  
   shell: [
             ['scripts/genus_genbank_to_blast',             'pathdev_bin'   ],
             ['scripts/refseq_blast_databases',             'pathdev_bin'   ],
