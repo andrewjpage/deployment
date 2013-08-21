@@ -20,6 +20,7 @@ general:
 	    ['modules/util',				'production_lib'],
 	    ['modules/gffminimal',   	                'production_lib'],
 	    ['modules/ropy',				'production_lib'],
+	    ['modules/writedb_entry_set',		'production_lib'],
         ]
   
   perl: [
