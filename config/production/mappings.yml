@@ -128,6 +128,7 @@ general:
             ['scripts/chado',                              'production_bin'],
             ['scripts/writedb_entry',                      'production_bin'],
             ['scripts/chado_dump_transcripts',             'production_bin'],
+            ['scripts/chado_dump_genome',                  'production_bin'],
             ['scripts/iprscan_chado',                      'production_bin'],
             ['scripts/art_act_launcher',                   'production_bin'],
             ['scripts/tmhmm_chado',                        'production_bin'],
