@@ -135,6 +135,7 @@ general:
             ['scripts/directory_size_report.sh',           'pathdev_bin'   ],
             ['scripts/generate_ref_index.sh',		   'pathdev_bin'   ],
             ['scripts/orientationtracker.sh',              'production_bin'],
+            ['scripts/chado_dump_genome',                  'production_bin'],
             ['scripts/chado_dump_proteins_ordered',   	   'production_bin'],
             ['scripts/chado_dump_transcripts_coding',      'production_bin'],
             ['scripts/chado_dump_transcripts_rna',         'production_bin'],
