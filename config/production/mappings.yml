@@ -57,6 +57,7 @@ general:
             ['scripts/whereismydata',                 'production_bin'],
             ['scripts/extract_region_from_multifasta', 'production_bin'],
             ['scripts/submission_lookup',             'production_bin'],
+            ['scripts/remove_snp_sites_with_missing_data', 'production_bin'],
             ['scripts/plasmid_identification',        'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/annotationfind',                'production_bin'],
