@@ -53,6 +53,7 @@ general:
             ['scripts/create_blast_dbs_from_annotation_pipeline',  'pathdev_bin'   ],
             ['scripts/rebalance_disks',               'pathdev_bin'   ],
             ['scripts/pacbio_assemble_smrtanalysis-2.0.1',                       'production_bin'],
+            ['scripts/identify_protein_changes_at_position','production_bin'],
             ['scripts/reffind',                       'production_bin'],
             ['scripts/whereismydata',                 'production_bin'],
             ['scripts/extract_region_from_multifasta', 'production_bin'],
