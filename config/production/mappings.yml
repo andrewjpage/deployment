@@ -60,6 +60,8 @@ general:
             ['scripts/submission_lookup',             'production_bin'],
             ['scripts/remove_snp_sites_with_missing_data', 'production_bin'],
             ['scripts/plasmid_identification',        'production_bin'],
+	    ['scripts/identify_cluster_defining_snps', 'production_bin'],
+            ['scripts/label_internal_nodes_of_newick_tree', 'production_bin'],
             ['scripts/pathfind',                      'production_bin'],
             ['scripts/annotationfind',                'production_bin'],
             ['scripts/plexfind',                      'production_bin'],
