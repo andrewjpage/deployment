@@ -17,10 +17,10 @@ general:
             ['scripts/fastn_split.py',                	'production_bin'],
             ['scripts/get_sequencing_project_pages.py', 'production_bin'],
             ['modules/wikipy.py',                       'production_lib'],
-	        ['modules/util/*',				            'production_lib'],
-	        ['modules/gffminimal/*',   	                'production_lib'],
-	        ['modules/ropy/*',				            'production_lib'],
-	        ['modules/writedb_entry_set/*',		        'production_lib'],
+	        ['modules/util',				            'production_lib'],
+	        ['modules/gffminimal',   	                'production_lib'],
+	        ['modules/ropy',				            'production_lib'],
+	        ['modules/writedb_entry_set',		        'production_lib'],
         ]
   
   perl: [
