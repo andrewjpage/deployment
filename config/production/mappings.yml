@@ -121,6 +121,10 @@ general:
 
   c: [[ "bin/assembly_stats", 'production_bin']]
   r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
+  data: [
+          [ 'adapters/solexa-adapters.fasta', 'production_adapters'],
+          [ 'adapters/solexa-adapters.quasr', 'production_adapters'],
+        ]
 
   shell: [
             ['scripts/genus_genbank_to_blast',             'pathdev_bin'   ],
