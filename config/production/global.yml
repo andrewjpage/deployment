@@ -16,7 +16,6 @@ directories:
   production_java:   '/software/pathogen/internal/pathdev/java'
   production_etc:    '/software/pathogen/etc'
   production_genedb: '/nfs/pathdb/bin'
-  production_adapters: '/lustre/scratch108/pathogen/pathpipe/usr/share'
   documentation:     '/nfs/WWWdev/INTWEB_docs/htdocs/Teams/Team81/docs'
 
 application_locations:

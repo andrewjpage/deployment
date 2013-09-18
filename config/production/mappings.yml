@@ -122,8 +122,8 @@ general:
   c: [[ "bin/assembly_stats", 'production_bin']]
   r: [[ "scripts/tradis_essentiality.R", 'production_bin']]
   data: [
-          [ 'adapters/solexa-adapters.fasta', 'production_adapters'],
-          [ 'adapters/solexa-adapters.quasr', 'production_adapters'],
+          [ 'adapters/solexa-adapters.fasta', 'production_etc'],
+          [ 'adapters/solexa-adapters.quasr', 'production_etc'],
         ]
 
   shell: [
