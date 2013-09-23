@@ -28,7 +28,9 @@ use strict;
 use warnings;
 use Getopt::Long;
 use Net::SCP;
+use File::Basename;
 use Git::Repository;
+use File::Find::Rule ;
 use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
 use Deploy::Make;
@@ -98,15 +100,26 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
     $scp_connection->cwd($mappings->[1]);
     
     if(-d "$config_settings{checkout_directory}/$directory/$mappings->[0]")
-    {
-      $scp_connection->mkdir($mappings->[0]);
-      $scp_connection->cwd($mappings->[1].'/'.$mappings->[0]);
-      $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]/*") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
-    }
-    else
-    {
-      $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
-    }
+     {
+       my($module_base, $directories, $suffix) = fileparse("$config_settings{checkout_directory}/$directory/$mappings->[0]");
+       $scp_connection->mkdir($module_base);
+       my @files = File::Find::Rule->file()->name( "*" )->in( "$config_settings{checkout_directory}/$directory/$mappings->[0]/" );
+
+       for my $module_file (@files)
+       {
+         my $relative_remote_dir = $module_file;
+         $relative_remote_dir =~ s!$directories!!i;
+         my($remote_file, $remote_base_dir, $suffix) = fileparse($relative_remote_dir);
+
+         $scp_connection->mkdir($mappings->[1].'/'.$remote_base_dir);
+         $scp_connection->cwd($mappings->[1].'/'.$remote_base_dir);
+         $scp_connection->put("$module_file") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+       }
+     }
+     else
+     {
+       $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+     }
   }
 }
 
