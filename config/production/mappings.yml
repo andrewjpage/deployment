@@ -171,9 +171,9 @@ general:
       [ 'scripts/fix-nightly',                        'production_genedb' ],
       [ 'scripts/fix-snapshot',                       'production_genedb' ],
       [ 'scripts/fix-staging',                        'production_genedb' ],
-  
       [ 'scripts/db_info',      'production_bin' ],
-      [ 'scripts/run_jspecies', 'production_bin' ]
+      [ 'scripts/run_jspecies', 'production_bin' ],
+      [ 'scripts/path-user-code-find.sh',	 'production_bin' ]
     ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
