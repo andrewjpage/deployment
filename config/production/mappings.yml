@@ -27,6 +27,7 @@ general:
       [ 'scripts/fastq_to_fasta',                            'production_bin' ],
       [ 'scripts/bacteria_pan_genome',                       'production_bin' ],
       [ 'scripts/merge_rnaseq_expression_spreadsheets.pl',   'pathdev_bin' ],
+      [ 'scripts/annotate_references',                       'pathdev_bin' ],
       [ 'scripts/convert_gff3_to_gff2.pl',                   'production_bin' ],
       [ 'scripts/tradis_merge_plots',                        'production_bin' ],
       [ 'scripts/validate_multi_fasta_alignment',            'production_bin' ],
