@@ -103,6 +103,19 @@ general:
 	          ['scripts/cshrc_to_bash.pl',              'pathdev_bin'   ],
             ['scripts/infofind',                      'production_bin'],
             ['scripts/select_gene_sequences.pl',      'production_bin'],
+         ['scripts/EMBL_submission_add_header.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_add_source.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_add_source_when_none_exist.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_list_files_with_no_source.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_rebuild_scaffold_sequence.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_remove_empty_files.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_remove_features.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_remove_files_with_no_annotation.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_remove_note.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_remove_qualifiers.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_run_EMBL_validator.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_summarise_errors.pl', 'pathdev_bin'],
+         ['scripts/EMBL_submission_tw_rm_note.pl', 'pathdev_bin'],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
