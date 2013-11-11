@@ -107,6 +107,7 @@ general:
 	          ['scripts/cshrc_to_bash.pl',              'pathdev_bin'   ],
             ['scripts/infofind',                      'production_bin'],
             ['scripts/select_gene_sequences.pl',      'production_bin'],
+            ['scripts/get_GO_association.pl',      'production_bin'],
         ]
   java: [ ["googlecode.jar", "production_java"] ]
   
