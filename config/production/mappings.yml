@@ -132,26 +132,26 @@ general:
       [ 'scripts/infofind',                                          'production_bin' ],
       [ 'scripts/select_gene_sequences.pl',                          'production_bin' ],
       [ 'scripts/get_GO_association.pl',                             'production_bin'],
-    ]
+  ]
 
-   java: [ 
+  java: [ 
         ["googlecode.jar", "production_java"],
-    ]
+  ]
     
-   c: [
+  c: [
         [ "bin/assembly_stats", 'production_bin'],
-    ]
+  ]
     
-   r: [
+  r: [
         [ "scripts/tradis_essentiality.R", 'production_bin'],
-    ]
+  ]
     
-   data: [ 
+  data: [ 
         [ 'adapters/solexa-adapters.fasta', 'production_etc' ], 
         [ 'adapters/solexa-adapters.quasr', 'production_etc' ], 
-    ]
+  ]
   
-    shell: [
+  shell: [
       [ 'scripts/genus_genbank_to_blast',             'pathdev_bin' ],
       [ 'scripts/refseq_blast_databases',             'pathdev_bin' ],
       [ 'scripts/update_tracking_databases.sh',       'pathdev_bin' ],
@@ -201,6 +201,6 @@ general:
       [ 'scripts/db_info',      'production_bin' ],
       [ 'scripts/run_jspecies', 'production_bin' ],
       [ 'scripts/path-user-code-find.sh',	 'production_bin' ]
-    ]
+  ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
