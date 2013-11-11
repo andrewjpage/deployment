@@ -131,19 +131,22 @@ general:
       [ 'scripts/cshrc_to_bash.pl',                                  'pathdev_bin' ],
       [ 'scripts/infofind',                                          'production_bin' ],
       [ 'scripts/select_gene_sequences.pl',                          'production_bin' ],
-      ['scripts/get_GO_association.pl',                              'production_bin'],
+      [ 'scripts/get_GO_association.pl',                             'production_bin'],
     ]
 
-    java: [ 
-        ["googlecode.jar", "production_java"] 
+   java: [ 
+        ["googlecode.jar", "production_java"],
     ]
-    c: [
-        [ "bin/assembly_stats", 'production_bin']
+    
+   c: [
+        [ "bin/assembly_stats", 'production_bin'],
     ]
-    r: [
-        [ "scripts/tradis_essentiality.R", 'production_bin']
+    
+   r: [
+        [ "scripts/tradis_essentiality.R", 'production_bin'],
     ]
-    data: [ 
+    
+   data: [ 
         [ 'adapters/solexa-adapters.fasta', 'production_etc' ], 
         [ 'adapters/solexa-adapters.quasr', 'production_etc' ], 
     ]
