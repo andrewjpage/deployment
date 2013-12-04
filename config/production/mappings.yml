@@ -120,8 +120,11 @@ general:
       [ 'scripts/cshrc_to_bash.pl',                                  'pathdev_bin' ],
       [ 'scripts/select_gene_sequences.pl',                          'production_bin' ],
       [ 'scripts/get_GO_association.pl',                             'production_bin'],
+<<<<<<< HEAD
       [ 'modules/DaemonsLog',                                        'production_lib' ]
       [ 'scripts/dotplot.pl',                                        'production_bin'],
+=======
+>>>>>>> parent of b095be5... Added DaemonsLog to production mapping
   ]
 
   java: [ 
