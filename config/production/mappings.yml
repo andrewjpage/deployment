@@ -121,6 +121,7 @@ general:
       [ 'scripts/get_GO_association.pl',                             'production_bin'],
       [ 'modules/DaemonsLog',                                        'production_lib' ],
       [ 'scripts/dotplot.pl',                                        'production_bin'],
+      [ 'scripts/orthomcl2tab.pl',                                   'production_bin'],
   ]
 
   java: [ 
