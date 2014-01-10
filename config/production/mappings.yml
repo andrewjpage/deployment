@@ -127,10 +127,17 @@ general:
   ]
 
   java: [ 
-        ["googlecode.jar",                 "production_java"],
-        ["src/GoogleDocument.class",       "production_java"],
-        ["src/GoogleDocumentHelper.class", "production_java"],
-	["src/CATEGORY_DB.class",          "production_java"],
+        ["googlecode.jar",                                   "production_java"],
+        ["src/GoogleDocument.class",                         "production_java"],
+        ["src/GoogleDocumentHelper.class",                   "production_java"],
+	["src/CATEGORY_DB.class",                            "production_java"],
+	["src/GoogleDataProjectSlurper.class",               "production_java"],
+	["src/GoogleReferenceProjectSlurper.class",          "production_java"],
+	["src/Project.class",                                "production_java"],
+	["src/Reference.class",                              "production_java"],
+	["src/Reference$1.class",                            "production_java"],
+	["src/SearchSpreadsheet.class",                      "production_java"],
+	["src/WriteConfigFiles.class",                       "production_java"],
   ]
     
   c: [
