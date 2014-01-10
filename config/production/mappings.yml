@@ -135,7 +135,7 @@ general:
 	["src/GoogleReferenceProjectSlurper.class",          "production_java"],
 	["src/Project.class",                                "production_java"],
 	["src/Reference.class",                              "production_java"],
-	["src/Reference$1.class",                            "production_java"],
+	["src/Reference\$1.class",                           "production_java"],
 	["src/SearchSpreadsheet.class",                      "production_java"],
 	["src/WriteConfigFiles.class",                       "production_java"],
   ]
