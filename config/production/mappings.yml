@@ -127,7 +127,10 @@ general:
   ]
 
   java: [ 
-        ["googlecode.jar", "production_java"],
+        ["googlecode.jar",                 "production_java"],
+        ["src/GoogleDocument.class",       "production_java"],
+        ["src/GoogleDocumentHelper.class", "production_java"],
+	["src/CATEGORY_DB.class",          "production_java"],
   ]
     
   c: [
