@@ -124,6 +124,7 @@ general:
       [ 'scripts/dotplot.pl',                                        'production_bin'],
       [ 'scripts/orthomcl2tab.pl',                                   'production_bin'],
       [ 'modules/Crawl',                                             'production_lib' ],
+      [ 'scripts/pfamscan2tab_chado.pl',                             'production_bin'],
   ]
 
   java: [ 
