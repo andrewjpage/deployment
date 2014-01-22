@@ -127,6 +127,7 @@ general:
       [ 'scripts/pfamscan2tab_chado.pl',                             'production_bin'],
       [ 'scripts/find_untracked_studies.pl',                         'pathdev_bin' ],
       [ 'scripts/prosite_by_perl.pl',                                'production_bin' ],
+      [ 'scripts/trna-se.pl',                                        'production_bin' ],
   ]
 
   java: [ 
