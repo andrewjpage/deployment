@@ -24,5 +24,5 @@ application_locations:
   source_control: '/usr/bin/git'
   make:           '/usr/bin/make'
 deployment:
-  server: 'lenny-dev64'
+  server: 'pathpipe-farm3'
   user: 'pathdb'
