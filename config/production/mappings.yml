@@ -25,6 +25,7 @@ general:
   ]
   
   perl: [
+      ['scripts/reconnect_symlinks_from_nexsan_to_lustre',           'pathdev_bin'],
       ['scripts/EMBL_submission_add_header.pl',                      'pathdev_bin'],
       ['scripts/EMBL_submission_add_source.pl',                      'pathdev_bin'],
       ['scripts/EMBL_submission_add_source_when_none_exist.pl',      'pathdev_bin'],
