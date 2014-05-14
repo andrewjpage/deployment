@@ -130,6 +130,7 @@ general:
       [ 'scripts/prosite_by_perl.pl',                                'production_bin' ],
       [ 'scripts/trna-se.pl',                                        'production_bin' ],
       [ 'scripts/rfamscan_dechunk.pl',                               'production_bin' ],
+      [ 'scripts/run_beast.pl',                                      'production_bin' ],
   ]
 
   java: [ 
