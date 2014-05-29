@@ -22,6 +22,7 @@ general:
       [ 'modules/ropy',                            'production_lib' ],
       [ 'modules/writedb_entry_set',               'production_lib' ],
       [ 'modules/crawl',                           'production_lib' ],
+      [ 'scripts/rm_pathpipe_tmp.py',              'pathdev_bin'],
   ]
   
   perl: [
