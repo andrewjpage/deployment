@@ -132,6 +132,7 @@ general:
       [ 'scripts/trna-se.pl',                                        'production_bin' ],
       [ 'scripts/rfamscan_dechunk.pl',                               'production_bin' ],
       [ 'scripts/run_beast.pl',                                      'production_bin' ],
+      [ 'scripts/cogblast.pl',                                       'production_bin' ],
   ]
 
   java: [ 
