@@ -133,6 +133,7 @@ general:
       [ 'scripts/rfamscan_dechunk.pl',                               'production_bin' ],
       [ 'scripts/run_beast.pl',                                      'production_bin' ],
       [ 'scripts/cogblast.pl',                                       'production_bin' ],
+      [ 'scripts/reciprocal_fasta.pl',                               'production_bin' ],
   ]
 
   java: [ 
