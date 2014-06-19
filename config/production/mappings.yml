@@ -134,6 +134,8 @@ general:
       [ 'scripts/run_beast.pl',                                      'production_bin' ],
       [ 'scripts/cogblast.pl',                                       'production_bin' ],
       [ 'scripts/reciprocal_fasta.pl',                               'production_bin' ],
+      [ 'scripts/scout_wrapper.pl',                                  'production_bin' ],
+      [ 'scripts/auto_update_go_terms.pl',                           'pathdev_bin' ],
   ]
 
   java: [ 
