@@ -136,6 +136,7 @@ general:
       [ 'scripts/reciprocal_fasta.pl',                               'production_bin' ],
       [ 'scripts/scout_wrapper.pl',                                  'production_bin' ],
       [ 'scripts/auto_update_go_terms.pl',                           'pathdev_bin' ],
+      [ 'scripts/interpro_to_chado_load',                            'production_bin' ],
   ]
 
   java: [ 
