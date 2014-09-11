@@ -174,7 +174,6 @@ general:
       [ 'scripts/writedb_entry',                      'production_bin' ],
       [ 'scripts/chado_dump_transcripts',             'production_bin' ],
       [ 'scripts/chado_dump_genome',                  'production_bin' ],
-      [ 'scripts/iprscan_chado',                      'production_bin' ],
       [ 'scripts/art_act_launcher',                   'production_bin' ],
       [ 'scripts/tmhmm_chado',                        'production_bin' ],
       [ 'scripts/pfamscan_chado',                     'production_bin' ],
@@ -211,6 +210,8 @@ general:
       [ 'scripts/db_info',      'production_bin' ],
       [ 'scripts/run_jspecies', 'production_bin' ],
       [ 'scripts/path-user-code-find.sh',	 'production_bin' ]
+      [ 'scripts/chado_run_iprscan',                  'production_bin' ],
+      [ 'scripts/chado_convert_load_iprscan',         'production_bin' ],
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
