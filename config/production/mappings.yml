@@ -48,6 +48,7 @@ general:
       [ 'scripts/validate_multi_fasta_alignment',                    'production_bin' ],
       [ 'scripts/tradis_gene_insert_sites',                          'production_bin' ],
       [ 'scripts/count_ns_in_alignment',                             'production_bin' ],
+      [ 'scripts/pacbio_smrtanalysis',                               'production_bin' ],
       [ 'scripts/exclude_sequences_from_fasta',                      'production_bin' ],
       [ 'scripts/backup_documents.pl',                               'pathdev_bin' ],
       [ 'scripts/populate_organisms.pl',                             'pathdev_bin' ],
