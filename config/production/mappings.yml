@@ -41,6 +41,7 @@ general:
       ['scripts/EMBL_submission_summarise_errors.pl',                'pathdev_bin'],
       ['scripts/EMBL_submission_tw_rm_note.pl',                      'pathdev_bin'],
       [ 'scripts/fastq_to_fasta',                                    'production_bin' ],
+      [ 'scripts/signalp_chado',                                     'production_bin' ],
       [ 'scripts/merge_rnaseq_expression_spreadsheets.pl',           'pathdev_bin' ],
       [ 'scripts/annotate_references',                               'pathdev_bin' ],
       [ 'scripts/convert_gff3_to_gff2.pl',                           'production_bin' ],
