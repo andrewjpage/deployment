@@ -214,7 +214,8 @@ general:
       [ 'scripts/run_jspecies', 'production_bin' ],
       [ 'scripts/path-user-code-find.sh',	 'production_bin' ],
       [ 'scripts/chado_run_iprscan',                  'production_bin' ],
-      [ 'scripts/chado_convert_load_iprscan',         'production_bin' ]
+      [ 'scripts/chado_convert_load_iprscan',         'production_bin' ],
+      [ 'scripts/run_haploview',                      'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
