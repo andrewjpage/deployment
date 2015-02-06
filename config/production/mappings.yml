@@ -141,6 +141,7 @@ general:
       [ 'scripts/auto_update_go_terms.pl',                           'pathdev_bin' ],
       [ 'scripts/interpro_to_chado_load',                            'production_bin' ],
       [ 'scripts/generate_nctc_tab.pl',                              'pathdev_bin' ],
+      [ 'scripts/filter_embl_with_essentiality.pl',                  'production_bin' ],
   ]
 
   java: [ 
