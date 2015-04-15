@@ -141,6 +141,8 @@ general:
       [ 'scripts/interpro_to_chado_load',                            'production_bin' ],
       [ 'scripts/generate_nctc_tab.pl',                              'pathdev_bin' ],
       [ 'scripts/filter_embl_with_essentiality.pl',                  'production_bin' ],
+      [ 'scripts/transfer_genes.pl',                                 'production_bin' ],
+      [ 'scripts/transfer_ids_to_EMBL.pl',                           'production_bin' ],
   ]
 
   java: [ 
