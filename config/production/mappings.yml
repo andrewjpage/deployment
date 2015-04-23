@@ -143,7 +143,7 @@ general:
       [ 'scripts/filter_embl_with_essentiality.pl',                  'production_bin' ],
       [ 'scripts/transfer_genes.pl',                                 'production_bin' ],
       [ 'scripts/transfer_ids_to_EMBL.pl',                           'production_bin' ],
-      [ 'scripts/extact_modifications_to_plots',                     'production_bin' ],
+      [ 'scripts/extract_modifications_to_plots',                    'production_bin' ],
   ]
 
   java: [ 
