@@ -204,7 +204,6 @@ general:
       [ 'scripts/download.sh',                        'pathdev_bin' ],
       [ 'scripts/profile.pathogen',                   'production_etc' ],
       [ 'scripts/cshrc.pathogen',                     'production_etc' ],
-      [ 'scripts/profile.pathogen',                   'production_etc' ],
       [ 'scripts/ena_data_submission.conf',           'production_etc' ],
       [ 'scripts/elasticsearch-cluster-control',      'production_genedb' ],
       [ 'scripts/genedb-web-control',                 'production_genedb' ],
