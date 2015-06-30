@@ -4,6 +4,7 @@ general:
       [ 'scripts/bam2snp',                         'production_bin' ],
       [ 'scripts/crawler.py',                      'production_bin' ],
       [ 'scripts/features_with_term_property.py',  'production_bin' ],
+      [ 'scripts/genedb_to_uniprot.py',            'production_bin' ],
       [ 'scripts/get_orthologues_filtered.py',     'production_bin' ],
       [ 'scripts/get_synonyms.py',                 'production_bin' ],
       [ 'scripts/gffmini.py',                      'production_bin' ],
@@ -26,7 +27,7 @@ general:
       [ 'scripts/rm_pathpipe_tmp.py',              'pathdev_bin'],
       [ 'scripts/report_large_files.py',           'pathdev_bin'],
   ]
-  
+
   perl: [
       ['scripts/reconnect_symlinks_from_nexsan_to_lustre',           'pathdev_bin'],
       ['scripts/EMBL_submission_add_header.pl',                      'pathdev_bin'],
@@ -145,7 +146,7 @@ general:
       [ 'scripts/extract_modifications_to_plots',                    'production_bin' ],
   ]
 
-  java: [ 
+  java: [
         ["googlecode.jar",                                   "production_java"],
         ["src/GoogleDocument.class",                         "production_java"],
         ["src/GoogleDocumentHelper.class",                   "production_java"],
@@ -157,16 +158,16 @@ general:
 	["src/SearchSpreadsheet.class",                      "production_java"],
 	["src/WriteConfigFiles.class",                       "production_java"],
   ]
-    
+
   c: [
         [ "bin/assembly_stats", 'production_bin'],
   ]
-    
-  data: [ 
-        [ 'adapters/solexa-adapters.fasta', 'production_etc' ], 
-        [ 'adapters/solexa-adapters.quasr', 'production_etc' ], 
+
+  data: [
+        [ 'adapters/solexa-adapters.fasta', 'production_etc' ],
+        [ 'adapters/solexa-adapters.quasr', 'production_etc' ],
   ]
-  
+
   shell: [
       [ 'scripts/genus_genbank_to_blast',             'pathdev_bin' ],
       [ 'scripts/refseq_blast_databases',             'pathdev_bin' ],
