@@ -4,6 +4,7 @@ general:
       [ 'scripts/bam2snp',                         'production_bin' ],
       [ 'scripts/crawler.py',                      'production_bin' ],
       [ 'scripts/features_with_term_property.py',  'production_bin' ],
+      [ 'scripts/genedb_to_uniprot.py',            'production_bin' ],
       [ 'scripts/get_orthologues_filtered.py',     'production_bin' ],
       [ 'scripts/get_synonyms.py',                 'production_bin' ],
       [ 'scripts/gffmini.py',                      'production_bin' ],
