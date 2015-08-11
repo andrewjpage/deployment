@@ -186,7 +186,6 @@ general:
       [ 'scripts/pfamscan_chado',                     'production_bin' ],
       [ 'scripts/chado_dump_proteins',                'production_bin' ],
       [ 'scripts/chado_dump_introns',                 'production_bin' ],
-      [ 'scripts/iprscan',                            'production_bin' ],
       [ 'scripts/pmid_extraction',                    'production_bin' ],
       [ 'scripts/dnaplotter',                         'production_bin' ],
       [ 'scripts/art',                                'production_bin' ],
