@@ -220,7 +220,8 @@ general:
       [ 'scripts/chado_run_iprscan',		      'production_bin' ],
       [ 'scripts/chado_convert_load_iprscan',	      'production_bin' ],
       [ 'scripts/run_haploview',		      'production_bin' ],
-      [ 'scripts/pinto_pathdb_environment_setup.sh',  'pathdev_bin' ]
+      [ 'scripts/pinto_pathdb_environment_setup.sh',  'pathdev_bin' ],
+      [ 'scripts/mash',                               'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
