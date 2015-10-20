@@ -145,6 +145,7 @@ general:
       [ 'scripts/transfer_ids_to_EMBL.pl',                           'production_bin' ],
       [ 'scripts/extract_modifications_to_plots',                    'production_bin' ],
       [ 'scripts/get_library_type.pl',                               'production_bin' ],
+      [ 'scripts/repeat_finder.pl',                                  'production_bin' ],
   ]
 
   java: [
