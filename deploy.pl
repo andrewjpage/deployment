@@ -37,8 +37,10 @@ use Deploy::Make;
 use Deploy::Documentation;
 
 my $ENVIRONMENT;
+my $NOTEST;
 
-GetOptions ('environment|e=s'    => \$ENVIRONMENT);  
+GetOptions ('environment|e=s'    => \$ENVIRONMENT,
+	    'no-test|n'          => \$NOTEST);
 	   
 $ENVIRONMENT or die <<USAGE;
 Usage: $0 [options]
@@ -46,6 +48,7 @@ Build, test, create documentation and install files.
 
  Options:
      --environment		   The configuration settings you wish to use (test|production)
+     --no-test                     Don't run tests after building sources
 
 USAGE
 ;
@@ -76,7 +79,9 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
     directory => "$config_settings{checkout_directory}/$directory"
   );
   $make->build;
-  $make->test;
+  if (not $NOTEST) {
+    $make->test;
+  }
 }
 
 # create and install documenation
