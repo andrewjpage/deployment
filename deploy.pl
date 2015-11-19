@@ -28,6 +28,7 @@ use strict;
 use warnings;
 use Getopt::Long;
 use Net::SCP;
+use Net::SSH qw(ssh_cmd);
 use File::Basename;
 use Git::Repository;
 use File::Find::Rule ;
@@ -38,9 +39,11 @@ use Deploy::Documentation;
 
 my $ENVIRONMENT;
 my $NOTEST;
+my $CHECKSUMS_FILENAME;
 
 GetOptions ('environment|e=s'    => \$ENVIRONMENT,
-	    'no-test|n'          => \$NOTEST);
+	    'no-test|n'          => \$NOTEST,
+            'checksums|c=s'      => \$CHECKSUMS_FILENAME);
 	   
 $ENVIRONMENT or die <<USAGE;
 Usage: $0 [options]
@@ -49,6 +52,7 @@ Build, test, create documentation and install files.
  Options:
      --environment		   The configuration settings you wish to use (test|production)
      --no-test                     Don't run tests after building sources
+     --checksums                   File used to store checksums of installed scripts
 
 USAGE
 ;
@@ -123,6 +127,9 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
      }
      else
      {
+       my ($fname, $path, $suffix) = fileparse("$config_settings{checkout_directory}/$directory/$mappings->[0]");
+       my $stdout = ssh_cmd($config_settings{deployment}{server}, "if [ -e $mappings->[1]/$fname ]; then md5sum $mappings->[1]/$fname; else echo 'missing'; fi");
+       print "$mappings->[0] => $stdout";
        $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
      }
   }
