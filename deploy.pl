@@ -28,7 +28,6 @@ use strict;
 use warnings;
 use Getopt::Long;
 use Net::SCP;
-use Net::SSH qw(ssh_cmd);
 use File::Basename;
 use Git::Repository;
 use File::Find::Rule ;
@@ -36,6 +35,7 @@ use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
 use Deploy::Make;
 use Deploy::Documentation;
+use Deploy::RemoteChecksum;
 
 my $ENVIRONMENT;
 my $NOTEST;
@@ -98,8 +98,12 @@ my $documentation = Deploy::Documentation->new(
   );
 #$documentation->create_and_install(); 
 
+my %original_checksums = ();
+my %revised_checksums = ();
+
 # install code by copying to remote server
 my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 0 } ); 
+my $remote = Deploy::RemoteChecksum->new( $config_settings{deployment}{server} );
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
@@ -128,12 +132,16 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
      else
      {
        my ($fname, $path, $suffix) = fileparse("$config_settings{checkout_directory}/$directory/$mappings->[0]");
-       my $stdout = ssh_cmd($config_settings{deployment}{server}, "if [ -e $mappings->[1]/$fname ]; then md5sum $mappings->[1]/$fname; else echo 'missing'; fi");
-       print "$mappings->[0] => $stdout";
+       my $checksum = $remote->checksum("$mappings->[1]/$fname");
+       $original_checksums{"$mappings->[1]/$fname"} = $checksum;
        $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+       $checksum = $remote->checksum("$mappings->[1]/$fname");
+       $revised_checksums{"$mappings->[1]/$fname"} = $checksum;
      }
   }
 }
+
+$remote->compare_mappings(\%original_checksums, \%revised_checksums);
 
 # cleanup working directories
 my $directory_to_delete = $config_settings{checkout_directory};
