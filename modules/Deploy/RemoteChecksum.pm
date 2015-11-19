@@ -31,6 +31,7 @@ sub checksum
 			  else
 			    echo 'File not found';
 			  fi");
+  chomp($checksum);
   return $checksum;
 }
 
@@ -40,7 +41,7 @@ sub compare_mappings
   foreach my $path (keys %$original) {
     my $original_checksum = $original->{$path};
     my $revised_checksum = $revised->{$path};
-    print "$path has changed from '$original_checksum' to '$revised_checksum'" unless $original_checksum eq $revised_checksum;
+    print "$path has changed from '$original_checksum' to '$revised_checksum'\n" unless $original_checksum eq $revised_checksum;
   }
   return 1;
 }

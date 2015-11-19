@@ -126,17 +126,23 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 
          $scp_connection->mkdir($mappings->[1].'/'.$remote_base_dir);
          $scp_connection->cwd($mappings->[1].'/'.$remote_base_dir);
+	 my $remote_path = "$mappings->[1]/$relative_remote_dir";
+         my $checksum = $remote->checksum($remote_path);
+         $original_checksums{$remote_path} = $checksum;
          $scp_connection->put("$module_file") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+         $checksum = $remote->checksum($remote_path);
+         $revised_checksums{$remote_path} = $checksum;
        }
      }
      else
      {
        my ($fname, $path, $suffix) = fileparse("$config_settings{checkout_directory}/$directory/$mappings->[0]");
-       my $checksum = $remote->checksum("$mappings->[1]/$fname");
-       $original_checksums{"$mappings->[1]/$fname"} = $checksum;
+       my $remote_path = "$mappings->[1]/$fname";
+       my $checksum = $remote->checksum($remote_path);
+       $original_checksums{$remote_path} = $checksum;
        $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
-       $checksum = $remote->checksum("$mappings->[1]/$fname");
-       $revised_checksums{"$mappings->[1]/$fname"} = $checksum;
+       $checksum = $remote->checksum($remote_path);
+       $revised_checksums{$remote_path} = $checksum;
      }
   }
 }
