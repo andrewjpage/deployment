@@ -26,3 +26,4 @@ application_locations:
 deployment:
   server: 'pathpipe-farm3'
   user: 'pathdb'
+  checksums: '/software/pathogen/internal/prod/deployment_checksums.log'

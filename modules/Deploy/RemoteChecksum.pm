@@ -46,4 +46,20 @@ sub compare_mappings
   return 1;
 }
 
+sub write_logfile
+{
+  my ( $self, $remote_log_path, $checksums ) = @_;
+  my @file_paths = sort keys %$checksums;
+  my $log_output = "";
+
+  foreach my $file_path ( @file_paths ) {
+    my $checksum = $checksums->{$file_path};
+    $log_output .= "$checksum  $file_path\n";
+  }
+  chomp($log_output);
+
+  ssh_cmd($self->{host}, "echo '$log_output' > $remote_log_path");
+  return 1;
+}
+
 1;

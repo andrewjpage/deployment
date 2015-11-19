@@ -25,3 +25,4 @@ application_locations:
 deployment:
   server: 'pathinfo-test'
   user: 'pathdb'
+  checksums: '/tmp/test_deployment_checksums.log'
