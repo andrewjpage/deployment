@@ -19,7 +19,7 @@ Usage
 
 or
 
-    ./deploy.pl -e production
+    ./deploy.pl --update-checksums -e production
   
 To run the application unit tests:
 
