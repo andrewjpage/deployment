@@ -4,6 +4,13 @@ RemoteChecksum.pm   - SSHs into a remote machine and take the checksum of a give
 
 =head1 SYNOPSIS
 
+my $remote = Deploy::RemoteChecksum->new('my_server.example.com');
+my $checksum = $remote->checksum('/home/foo/bar');
+my $original = { '/home/foo/bar' => 'd41d8cd98f00b204e9800998ecf8427e' };
+my $revised = { '/home/foo/bar' => 'bea8252ff4e80f41719ea13cdf007273' };
+$remote->compare_mappings($original, $revised);
+$remote->write_logfile('/home/foo/checksums.log', $revised);
+
 =cut
 
 package Deploy::RemoteChecksum;

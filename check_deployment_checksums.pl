@@ -6,7 +6,7 @@ check_checksums.pl
 
 =head1 SYNOPSIS
 
-check_checksums.pl CHECKSUM_FILE
+check_deployment_checksums.pl CHECKSUM_FILE
 
 =head1 DESCRIPTION
 
@@ -27,6 +27,7 @@ use strict;
 use warnings;
 use Getopt::Long;
 use Digest::MD5::File qw(file_md5_hex);
+use JSON qw(to_json);
 use Data::Dumper;
 
 my $CHECKSUM_PATH = pop @ARGV;
@@ -37,7 +38,7 @@ GetOptions ('output-json|j' => \$OUTPUT_JSON);
 sub die_usage
 {
   die <<USAGE;
-Usage: $0 CHECKSUM_PATH
+Usage: $0 [OPTIONS] CHECKSUM_PATH
 Chech that the files listed in CHECKSUM_PATH haven't changed
 
  Options:
@@ -79,13 +80,19 @@ sub output_text
 
 sub output_json
 {
-  my ( $differences ) = @_;
-  foreach my $difference (@$differences) {
+  my ( $differences_tuples, $checksum_path ) = @_;
+  my @differences_hashes = ();
+  foreach my $difference (@$differences_tuples) {
     my ($path, $old_checksum, $current_checksum) = @$difference;
-    print "'$path' has been modified: '$old_checksum' => '$current_checksum'\n";
+    push (@differences_hashes, { path => $path, 
+		                 old_checksum => $old_checksum,
+				 current_checksum => $current_checksum });
   }
+  my $json_output = to_json( { differences => \@differences_hashes,
+                               according_to => $checksum_path } );
+  print "$json_output\n";
   return 1;
 }
 
-print Dumper(\@differences);
-output_text(\@differences);
+my $out_func = defined $OUTPUT_JSON ? \&output_json : \&output_text;
+$out_func->(\@differences, $CHECKSUM_PATH);

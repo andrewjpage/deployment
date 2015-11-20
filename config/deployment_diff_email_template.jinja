@@ -1,0 +1,22 @@
+{#- This is a jinja2 template used by json2email to create an email based on the output -#}
+{#- from ./check_deployment_checksums.pl -#}
+{%- if differences -%}
+There were some changes detected to the following files which are normally controlled by the deployment scripts.
+
+This could be because you forgot to set the `--update-checksums` option during the last deployment or if could be because someone has manually edited a script (which is naughty).
+
+If you think it's the former, please re-run the deployment scripts.  At time of writing, this would be something like the following:
+
+```
+./deploy --update-checksums -e production
+```
+
+If you think it might be the later, please find the perpetrator and ask them not to do this again.
+
+According to '{{ according_to }}' the offending files were:
+{%- for difference in differences %}
+  {{ difference['path'] }} changed from '{{ difference['old_checksum'] }}' to '{{ difference['current_checksum'] }}'
+{%- endfor %}
+
+This email was brought to you by json2email and a cronjob which ran `./check_deployment_checksums.pl` in the deployment repo.
+{%- endif %}
