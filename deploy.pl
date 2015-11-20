@@ -83,9 +83,7 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
     directory => "$config_settings{checkout_directory}/$directory"
   );
   $make->build;
-  if (not $NOTEST) {
-    $make->test;
-  }
+  $make->test unless $NOTEST;
 }
 
 # create and install documenation

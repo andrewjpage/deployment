@@ -20,7 +20,6 @@ path-help@sanger.ac.uk
 =head1 METHODS
 
 =cut
-package Deploy;
 
 BEGIN { unshift(@INC, './modules') }
 use strict;
@@ -39,13 +38,37 @@ sub die_usage
 {
   die <<USAGE;
 Usage: $0 [OPTIONS] CHECKSUM_PATH
-Chech that the files listed in CHECKSUM_PATH haven't changed
+Check that the files listed in CHECKSUM_PATH haven't changed
 
  Options:
    --output-json    Output to stdout in JSON
 
 USAGE
 ;
+}
+
+sub output_text
+{
+  my ( $differences ) = @_;
+  foreach my $difference (@$differences) {
+    my ($path, $old_checksum, $current_checksum) = @$difference;
+    print "'$path' has been modified: '$old_checksum' => '$current_checksum'\n";
+  }
+}
+
+sub output_json
+{
+  my ( $differences_tuples, $checksum_path ) = @_;
+  my @differences_hashes = ();
+  foreach my $difference (@$differences_tuples) {
+    my ($path, $old_checksum, $current_checksum) = @$difference;
+    push @differences_hashes, { path => $path, 
+                                old_checksum => $old_checksum,
+                                current_checksum => $current_checksum };
+  }
+  my $json_output = to_json( { differences => \@differences_hashes,
+                               according_to => $checksum_path } );
+  print "$json_output\n";
 }
 
 $CHECKSUM_PATH or die_usage();
@@ -64,35 +87,14 @@ while (my $row = <$checksum_file>) {
   }
   if ( $old_checksum ne $current_checksum ) {
     my @difference = ($path, $old_checksum, $current_checksum);
-    push (@differences, \@difference);
+    push @differences, \@difference;
   }
 }
 
-sub output_text
-{
-  my ( $differences ) = @_;
-  foreach my $difference (@$differences) {
-    my ($path, $old_checksum, $current_checksum) = @$difference;
-    print "'$path' has been modified: '$old_checksum' => '$current_checksum'\n";
-  }
-  return 1;
+if ( $OUTPUT_JSON ) {
+  output_json( \@differences, $CHECKSUM_PATH );
+} else {
+  output_text( \@differences );
 }
 
-sub output_json
-{
-  my ( $differences_tuples, $checksum_path ) = @_;
-  my @differences_hashes = ();
-  foreach my $difference (@$differences_tuples) {
-    my ($path, $old_checksum, $current_checksum) = @$difference;
-    push (@differences_hashes, { path => $path, 
-		                 old_checksum => $old_checksum,
-				 current_checksum => $current_checksum });
-  }
-  my $json_output = to_json( { differences => \@differences_hashes,
-                               according_to => $checksum_path } );
-  print "$json_output\n";
-  return 1;
-}
-
-my $out_func = defined $OUTPUT_JSON ? \&output_json : \&output_text;
-$out_func->(\@differences, $CHECKSUM_PATH);
+exit 0;

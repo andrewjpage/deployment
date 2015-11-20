@@ -50,23 +50,20 @@ sub compare_mappings
     my $revised_checksum = $revised->{$path};
     print "$path has changed from '$original_checksum' to '$revised_checksum'\n" unless $original_checksum eq $revised_checksum;
   }
-  return 1;
 }
 
 sub write_logfile
 {
   my ( $self, $remote_log_path, $checksums ) = @_;
-  my @file_paths = sort keys %$checksums;
   my $log_output = "";
 
-  foreach my $file_path ( @file_paths ) {
+  foreach my $file_path ( sort keys %$checksums ) {
     my $checksum = $checksums->{$file_path};
     $log_output .= "$checksum  $file_path\n";
   }
   chomp($log_output);
 
   ssh_cmd($self->{host}, "echo '$log_output' > $remote_log_path");
-  return 1;
 }
 
 1;
