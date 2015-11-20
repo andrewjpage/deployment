@@ -42,9 +42,9 @@ my $NOTEST;
 my $UPDATE_CHECKSUMS;
 
 GetOptions ('environment|e=s'    => \$ENVIRONMENT,
-	    'no-test|n'          => \$NOTEST,
+            'no-test|n'          => \$NOTEST,
             'update-checksums|u' => \$UPDATE_CHECKSUMS);
-	   
+
 $ENVIRONMENT or die <<USAGE;
 Usage: $0 [options]
 Build, test, create documentation and install files.
@@ -126,7 +126,7 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 
          $scp_connection->mkdir($mappings->[1].'/'.$remote_base_dir);
          $scp_connection->cwd($mappings->[1].'/'.$remote_base_dir);
-	 my $remote_path = "$mappings->[1]/$relative_remote_dir";
+         my $remote_path = "$mappings->[1]/$relative_remote_dir";
          my $checksum = $remote->checksum($remote_path);
          $original_checksums{$remote_path} = $checksum;
          $scp_connection->put("$module_file") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};

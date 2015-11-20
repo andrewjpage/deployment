@@ -21,23 +21,23 @@ use Net::SSH qw(ssh_cmd);
 
 sub new
 {
-    my ($class, $host) = @_;
-    die "Must provide host parameter" unless defined $host;
-    my $self = { host => $host };
-    bless $self, ref($class) || $class;
-    
-    return $self;
+  my ($class, $host) = @_;
+  die "Must provide host parameter" unless defined $host;
+  my $self = { host => $host };
+  bless $self, ref($class) || $class;
+
+  return $self;
 }
 
 sub checksum
 {
   my( $self, $path ) = @_;
   my $checksum = ssh_cmd($self->{host},
-	                 "if [ -e $path ]; then
-			    md5sum $path | awk '{print \$1}';
-			  else
-			    echo 'File not found';
-			  fi");
+                         "if [ -e $path ]; then
+                            md5sum $path | awk '{print \$1}';
+                          else
+                            echo 'File not found';
+                          fi");
   chomp($checksum);
   return $checksum;
 }
