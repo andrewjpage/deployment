@@ -4,19 +4,8 @@
 There were some changes detected to the following files which are normally
 controlled by the deployment scripts.
 
-This could be because you forgot to set the `--update-checksums` option during 
-the last deployment or if could be because someone has manually edited a 
-script (which is naughty).
-
-If you think it's the former, please re-run the deployment scripts.  At time of
-writing, this would be something like the following:
-
-```
-./deploy --update-checksums -e production
-```
-
-If you think it might be the later, please find the perpetrator and ask them
-not to do this again.
+This could be because someone has manually edited a script (which is naughty);
+please asked them nicely not to do this again.
 
 According to '{{ according_to }}' the offending files were:
 {%- for difference in differences %}

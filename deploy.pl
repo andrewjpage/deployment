@@ -39,11 +39,11 @@ use Deploy::RemoteChecksum;
 
 my $ENVIRONMENT;
 my $NOTEST;
-my $UPDATE_CHECKSUMS;
+my $NO_UPDATE_CHECKSUMS;
 
 GetOptions ('environment|e=s'    => \$ENVIRONMENT,
             'no-test|n'          => \$NOTEST,
-            'update-checksums|u' => \$UPDATE_CHECKSUMS);
+            'do-not-update|U'    => \$NO_UPDATE_CHECKSUMS);
 
 $ENVIRONMENT or die <<USAGE;
 Usage: $0 [options]
@@ -52,7 +52,7 @@ Build, test, create documentation and install files.
  Options:
      --environment		   The configuration settings you wish to use (test|production)
      --no-test                     Don't run tests after building sources
-     --update-checksums            Update the checksums file
+     --do-not-update               Don't update the checksums file
 
 USAGE
 ;
@@ -146,7 +146,7 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 }
 
 $remote->compare_mappings(\%original_checksums, \%revised_checksums);
-$remote->write_logfile($config_settings{deployment}{checksums}, \%revised_checksums) if defined $UPDATE_CHECKSUMS;
+$remote->write_logfile($config_settings{deployment}{checksums}, \%revised_checksums) unless $NO_UPDATE_CHECKSUMS;
 
 # cleanup working directories
 my $directory_to_delete = $config_settings{checkout_directory};
