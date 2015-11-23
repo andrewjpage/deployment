@@ -21,18 +21,28 @@ use Net::SSH qw(ssh_cmd);
 
 sub new
 {
-  my ($class, $host) = @_;
+  my ($class, $host, $user) = @_;
   die "Must provide host parameter" unless defined $host;
-  my $self = { host => $host };
+  die "Must provide user parameter" unless defined $user;
+  my $self = { host => $host, user => $user };
   bless $self, ref($class) || $class;
 
   return $self;
 }
 
+sub _cmd
+{
+  my ($self, $cmd) = @_;
+  my $host = $self->{host};
+  my $user = $self->{user};
+  my $response = ssh_cmd("$user\@$host", $cmd);
+  return $response;
+}
+
 sub checksum
 {
   my( $self, $path ) = @_;
-  my $checksum = ssh_cmd($self->{host},
+  my $checksum = $self->_cmd(
                          "if [ -e $path ]; then
                             md5sum $path | awk '{print \$1}';
                           else
@@ -63,7 +73,7 @@ sub write_logfile
   }
   chomp($log_output);
 
-  ssh_cmd($self->{host}, "echo '$log_output' > $remote_log_path");
+  my $response = $self->_cmd("echo '$log_output' > $remote_log_path");
 }
 
 1;

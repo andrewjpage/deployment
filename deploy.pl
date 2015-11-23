@@ -101,7 +101,7 @@ my %revised_checksums = ();
 
 # install code by copying to remote server
 my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 0 } ); 
-my $remote = Deploy::RemoteChecksum->new( $config_settings{deployment}{server} );
+my $remote = Deploy::RemoteChecksum->new( $config_settings{deployment}{server}, $config_settings{deployment}{user} );
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
