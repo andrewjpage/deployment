@@ -17,13 +17,21 @@ package Deploy::RemoteChecksum;
 
 use strict;
 use warnings;
-use Net::SSH qw(ssh_cmd);
+use Net::SSH::Perl;
 
 sub new
 {
-  my ($class, $host) = @_;
+  my ($class, $host, $user) = @_;
   die "Must provide host parameter" unless defined $host;
-  my $self = { host => $host };
+  my $ssh = Net::SSH::Perl->new($host, ( interactive => 1 ));
+  if ( $user ) {
+    $ssh->login( $user );
+  } else {
+    $ssh->login();
+  }
+  my $self = { host => $host,
+               user => $user,
+               ssh  => $ssh };
   bless $self, ref($class) || $class;
 
   return $self;
@@ -32,7 +40,8 @@ sub new
 sub checksum
 {
   my( $self, $path ) = @_;
-  my $checksum = ssh_cmd($self->{host},
+  my $ssh = $self->{ssh};
+  my ($checksum, $error, $status) = $ssh->cmd(
                          "if [ -e $path ]; then
                             md5sum $path | awk '{print \$1}';
                           else
@@ -56,6 +65,7 @@ sub write_logfile
 {
   my ( $self, $remote_log_path, $checksums ) = @_;
   my $log_output = "";
+  my $ssh = $self->{ssh};
 
   foreach my $file_path ( sort keys %$checksums ) {
     my $checksum = $checksums->{$file_path};
@@ -63,7 +73,7 @@ sub write_logfile
   }
   chomp($log_output);
 
-  ssh_cmd($self->{host}, "echo '$log_output' > $remote_log_path");
+  $ssh->cmd("echo '$log_output' > $remote_log_path");
 }
 
 1;
