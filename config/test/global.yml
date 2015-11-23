@@ -4,17 +4,17 @@ general:
     branch: 'master'
   directories_to_build: ['perl','java','python','shell']
 
-checkout_directory: "/tmp"
+checkout_directory: "/tmp/deployment_test"
 
 directories:
-  production_bin:    '/tmp'
-  production_lib:    '/tmp'
-  pathdev_lib:       '/tmp'
-  pathdev_bin:       '/tmp'
-  preproduction_bin: '/tmp'
-  preproduction_lib: '/tmp'
-  production_java:   '/tmp'
-  documentation:     '/tmp'
+  production_bin:    '/tmp/deployment_test'
+  production_lib:    '/tmp/deployment_test'
+  pathdev_lib:       '/tmp/deployment_test'
+  pathdev_bin:       '/tmp/deployment_test'
+  preproduction_bin: '/tmp/deployment_test'
+  preproduction_lib: '/tmp/deployment_test'
+  production_java:   '/tmp/deployment_test'
+  documentation:     '/tmp/deployment_test'
 
 application_locations:
   perl:           '/software/bin/perl'
