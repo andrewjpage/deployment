@@ -23,6 +23,6 @@ application_locations:
   make:           '/usr/bin/make'
   
 deployment:
-  server: 'pathinfo-test'
+  server: 'pathpipe-farm3-test'
   user: 'pathdb'
   checksums: '/tmp/test_deployment_checksums.log'
