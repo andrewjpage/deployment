@@ -35,17 +35,24 @@ use Deploy::GlobalConfigSettings;
 use Deploy::InstallMappings;
 use Deploy::Make;
 use Deploy::Documentation;
+use Deploy::RemoteChecksum;
 
 my $ENVIRONMENT;
+my $NOTEST;
+my $NO_UPDATE_CHECKSUMS;
 
-GetOptions ('environment|e=s'    => \$ENVIRONMENT);  
-	   
+GetOptions ('environment|e=s'    => \$ENVIRONMENT,
+            'no-test|n'          => \$NOTEST,
+            'do-not-update|U'    => \$NO_UPDATE_CHECKSUMS);
+
 $ENVIRONMENT or die <<USAGE;
 Usage: $0 [options]
 Build, test, create documentation and install files.
 
  Options:
      --environment		   The configuration settings you wish to use (test|production)
+     --no-test                     Don't run tests after building sources
+     --do-not-update               Don't update the checksums file
 
 USAGE
 ;
@@ -76,7 +83,7 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
     directory => "$config_settings{checkout_directory}/$directory"
   );
   $make->build;
-  $make->test;
+  $make->test unless $NOTEST;
 }
 
 # create and install documenation
@@ -89,8 +96,12 @@ my $documentation = Deploy::Documentation->new(
   );
 #$documentation->create_and_install(); 
 
+my %original_checksums = ();
+my %revised_checksums = ();
+
 # install code by copying to remote server
 my $scp_connection = Net::SCP->new( { host => $config_settings{deployment}{server}, user => $config_settings{deployment}{user}, interactive => 0 } ); 
+my $remote = Deploy::RemoteChecksum->new( $config_settings{deployment}{server}, $config_settings{deployment}{user} );
 for my $directory (@{$config_settings{general}{directories_to_build}}) {
   for my $mappings (@{$repo_file_to_server_directory{general}{$directory}})
   {
@@ -113,15 +124,29 @@ for my $directory (@{$config_settings{general}{directories_to_build}}) {
 
          $scp_connection->mkdir($mappings->[1].'/'.$remote_base_dir);
          $scp_connection->cwd($mappings->[1].'/'.$remote_base_dir);
+         my $remote_path = "$mappings->[1]/$relative_remote_dir";
+         my $checksum = $remote->checksum($remote_path);
+         $original_checksums{$remote_path} = $checksum;
          $scp_connection->put("$module_file") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+         $checksum = $remote->checksum($remote_path);
+         $revised_checksums{$remote_path} = $checksum;
        }
      }
      else
      {
+       my ($fname, $path, $suffix) = fileparse("$config_settings{checkout_directory}/$directory/$mappings->[0]");
+       my $remote_path = "$mappings->[1]/$fname";
+       my $checksum = $remote->checksum($remote_path);
+       $original_checksums{$remote_path} = $checksum;
        $scp_connection->put("$config_settings{checkout_directory}/$directory/$mappings->[0]") or die $scp_connection->{errstr}." -> Try running ssh ".$config_settings{deployment}{server};
+       $checksum = $remote->checksum($remote_path);
+       $revised_checksums{$remote_path} = $checksum;
      }
   }
 }
+
+$remote->compare_mappings(\%original_checksums, \%revised_checksums);
+$remote->write_logfile($config_settings{deployment}{checksums}, \%revised_checksums) unless $NO_UPDATE_CHECKSUMS;
 
 # cleanup working directories
 my $directory_to_delete = $config_settings{checkout_directory};

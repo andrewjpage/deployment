@@ -1,0 +1,17 @@
+{#- This is a jinja2 template used by json2email to create an email based on the output -#}
+{#- from ./check_deployment_checksums.pl -#}
+{%- if differences -%}
+There were some changes detected to the following files which are normally
+controlled by the deployment scripts.
+
+This could be because someone has manually edited a script (which is naughty);
+please asked them nicely not to do this again.
+
+According to '{{ according_to }}' the offending files were:
+{%- for difference in differences %}
+  {{ difference['path'] }} changed from '{{ difference['old_checksum'] }}' to '{{ difference['current_checksum'] }}'
+{%- endfor %}
+
+This email was brought to you by json2email and a cronjob which ran
+`./check_deployment_checksums.pl` in the deployment repo.
+{%- endif %}
