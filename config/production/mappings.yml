@@ -226,7 +226,8 @@ general:
       [ 'scripts/mash',                               'production_bin' ],
       [ 'scripts/backup_midas_audit_logs.sh',         'pathdev_bin' ],
       [ 'scripts/phylosift',                          'production_bin' ],
-      [ 'scripts/run_canu.sh',                        'production_bin' ]
+      [ 'scripts/run_canu.sh',                        'production_bin' ],
+      [ 'scripts/pf.conf',                            'production_etc' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
