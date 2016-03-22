@@ -228,6 +228,7 @@ general:
       [ 'scripts/phylosift',                          'production_bin' ],
       [ 'scripts/run_canu.sh',                        'production_bin' ],
       [ 'scripts/pf.conf',                            'production_etc' ],
+      [ 'scripts/monitor_accounts_cron.sh',           'pathdev_bin'],
       [ 'scripts/filter_for_reago.sh',                'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
