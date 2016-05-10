@@ -226,6 +226,13 @@ general:
       [ 'scripts/backup_midas_audit_logs.sh',         'pathdev_bin' ],
       [ 'scripts/phylosift',                          'production_bin' ],
       [ 'scripts/run_canu.sh',                        'production_bin' ],
+      [ 'scripts/01_unipaths',                        'production_bin' ],   
+      [ 'scripts/02_qgraph',                          'production_bin' ],     
+      [ 'scripts/03_clean',                           'production_bin' ],      
+      [ 'scripts/04_patching',                        'production_bin' ],   
+      [ 'scripts/05_simplify',                        'production_bin' ],   
+      [ 'scripts/06_scaffolding',                     'production_bin' ],
+      [ 'scripts/beast1.8',                           'production_bin' ],
       [ 'scripts/pf.conf',                            'production_etc' ],
       [ 'scripts/monitor_accounts_cron.sh',           'pathdev_bin'],
       [ 'scripts/filter_for_reago.sh',                'production_bin' ]
