@@ -232,6 +232,7 @@ general:
       [ 'scripts/04_patching',                        'production_bin' ],   
       [ 'scripts/05_simplify',                        'production_bin' ],   
       [ 'scripts/06_scaffolding',                     'production_bin' ],
+      [ 'scripts/lcmlkin',                            'production_bin' ],
       [ 'scripts/rapmap',                             'production_bin' ],
       [ 'scripts/beast1.8',                           'production_bin' ],
       [ 'scripts/pf.conf',                            'production_etc' ],
