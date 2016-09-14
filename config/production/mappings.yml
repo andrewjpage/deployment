@@ -165,6 +165,12 @@ general:
         [ "bin/assembly_stats", 'production_bin'],
   ]
 
+  lua: [
+        [ "scripts/fixup_plasmodb",        "production_bin"],
+        [ "scripts/fixup_tritrypdb",       "production_bin"],
+        [ "scripts/add_products_to_fasta", "production_bin"],
+  ]
+
   data: [
         [ 'adapters/solexa-adapters.fasta', 'production_etc' ],
         [ 'adapters/solexa-adapters.quasr', 'production_etc' ],
