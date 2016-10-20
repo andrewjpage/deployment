@@ -241,7 +241,8 @@ general:
       [ 'scripts/filter_for_reago.sh',                'production_bin' ],
       [ 'scripts/mrbayes',                            'production_bin' ],
       [ 'scripts/recycle.py',                         'production_bin' ],
-      [ 'scripts/pilon',                              'production_bin' ]
+      [ 'scripts/pilon',                              'production_bin' ],
+      [ 'scripts/shovill',                              'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
