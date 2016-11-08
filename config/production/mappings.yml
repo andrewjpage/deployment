@@ -164,7 +164,6 @@ general:
   ]
 
   c: [
-        [ "bin/assembly_stats", 'production_bin'],
   ]
 
   lua: [
