@@ -249,6 +249,7 @@ general:
       [ 'scripts/mrbayes',                            'production_bin' ],
       [ 'scripts/recycle.py',                         'production_bin' ],
       [ 'scripts/pilon',                              'production_bin' ],
+      [ 'scripts/average_nucleotide_identity.py',     'production_bin' ],
       [ 'scripts/shovill',                              'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
