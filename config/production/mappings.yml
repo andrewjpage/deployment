@@ -179,6 +179,7 @@ general:
   ]
 
   shell: [
+      [ 'scripts/sourmash',                           'production_bin'],
       [ 'scripts/genus_genbank_to_blast',             'pathdev_bin' ],
       [ 'scripts/refseq_blast_databases',             'pathdev_bin' ],
       [ 'scripts/update_tracking_databases.sh',       'pathdev_bin' ],
