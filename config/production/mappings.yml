@@ -253,6 +253,7 @@ general:
       [ 'scripts/pilon',                              'production_bin' ],
       [ 'scripts/average_nucleotide_identity.py',     'production_bin' ],
       [ 'scripts/atlas',                              'production_bin' ],
+      [ 'genedb_dump_database_upload_to_ftp',         'production_bin' ],
       [ 'scripts/shovill',                              'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
