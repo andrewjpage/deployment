@@ -232,6 +232,7 @@ general:
       [ 'scripts/run_haploview',		      'production_bin' ],
       [ 'scripts/pinto_pathdb_environment_setup.sh',  'pathdev_bin' ],
       [ 'scripts/backup_midas_audit_logs.sh',         'pathdev_bin' ],
+      [ 'scripts/orderedPainting',                    'production_bin'],
       [ 'scripts/phylosift',                          'production_bin' ],
       [ 'scripts/run_canu.sh',                        'production_bin' ],
       [ 'scripts/01_unipaths',                        'production_bin' ],   
