@@ -253,7 +253,6 @@ general:
       [ 'scripts/mrbayes',                            'production_bin' ],
       [ 'scripts/recycle.py',                         'production_bin' ],
       [ 'scripts/pilon',                              'production_bin' ],
-      [ 'scripts/average_nucleotide_identity.py',     'production_bin' ],
       [ 'scripts/atlas',                              'production_bin' ],
       [ 'scripts/genedb_dump_database_upload_to_ftp', 'production_bin' ],
       [ 'scripts/shovill',                              'production_bin' ]
