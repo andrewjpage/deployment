@@ -236,7 +236,7 @@ general:
       [ 'scripts/backup_midas_audit_logs.sh',         'pathdev_bin' ],
       [ 'scripts/orderedPainting',                    'production_bin'],
       [ 'scripts/phylosift',                          'production_bin' ],
-      [ 'scripts/canu',                               'production_bin' ],
+      [ 'scripts/canu',                              'production_bin' ],
       [ 'scripts/01_unipaths',                        'production_bin' ],   
       [ 'scripts/02_qgraph',                          'production_bin' ],     
       [ 'scripts/03_clean',                           'production_bin' ],      
