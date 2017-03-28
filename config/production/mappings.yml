@@ -256,6 +256,7 @@ general:
       [ 'scripts/atlas',                              'production_bin' ],
       [ 'scripts/genedb_dump_database_upload_to_ftp', 'production_bin' ],
       [ 'scripts/prepare_artemis_release.sh',         'pathdev_bin'],
+      [ 'scripts/fc_run',                             'production_bin' ],
       [ 'scripts/shovill',                              'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
