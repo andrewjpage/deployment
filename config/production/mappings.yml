@@ -257,9 +257,8 @@ general:
       [ 'scripts/genedb_dump_database_upload_to_ftp', 'production_bin' ],
       [ 'scripts/prepare_artemis_release.sh',         'pathdev_bin'],
       [ 'scripts/fc_run',                             'production_bin' ],
-      [ 'scripts/shovill',                            'production_bin' ],
-      [ 'scripts/strainphlan.py',                     'production_bin' ],
-      [ 'scripts/unicycler',                          'production_bin']
+      [ 'scripts/shovill',                             'production_bin' ],
+      [ 'scripts/strainphlan.py',                     'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
