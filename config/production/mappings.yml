@@ -259,6 +259,7 @@ general:
       [ 'scripts/fc_run',                             'production_bin' ],
       [ 'scripts/shovill',                            'production_bin' ],
       [ 'scripts/strainphlan.py',                     'production_bin' ],
+      [ 'scripts/Trinity',                            'production_bin' ],
       [ 'scripts/unicycler',                          'production_bin']
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
