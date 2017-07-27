@@ -263,7 +263,8 @@ general:
       [ 'scripts/unicycler',                          'production_bin' ],
       [ 'scripts/download_ariba_databases.sh',        'production_bin' ],
       [ 'scripts/update_all_reference_from_refseq_in_tracking_dbs.sh', 'pathdev_bin'],
-      [ 'scripts/tracer.conf',                        'production_bin' ]
+      [ 'scripts/tracer.conf',                        'production_bin' ],
+      [ 'scripts/brig',                               'production_bin' ]
   ]
   splimer: [ [ 'splimer.pl', 'production_bin' ], [ 'modules/FastaLength.pm', 'production_lib' ],
   ]
