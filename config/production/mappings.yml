@@ -265,6 +265,7 @@ general:
       [ 'scripts/update_all_reference_from_refseq_in_tracking_dbs.sh', 'pathdev_bin'],
       [ 'scripts/tracer.conf',                        'production_bin' ],
       [ 'scripts/brig',                               'production_bin' ],
+	  [ 'scripts/ngsDist',                            'production_bin' ],
       [ 'scripts/setup_seroba_dbs.sh',                'pathdev_bin' ],
       [ 'scripts/mashmap',                            'production_bin' ]
   ]
